@@ -41,6 +41,10 @@ paper/*.run.xml
 paper/*.synctex.gz
 paper/*.toc
 paper/build/
+paper/*.pdf
+paper/*.xdv
+paper/final/*
+!paper/final/README.md
 
 # Local IDE and OS files
 .idea/
