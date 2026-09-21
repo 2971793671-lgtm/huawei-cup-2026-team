@@ -1,0 +1,110 @@
+# 全流程架构图
+
+这张图描述从题目进入、数据处理、批量实验、LaTeX 写作，到最终封卷提交的完整链路。图源保存在 `architecture-flow.mmd`，本 Markdown 文件中的 Mermaid 代码可以直接在 GitHub 和支持 Mermaid 的 VS Code 插件中预览。
+
+```mermaid
+flowchart TB
+    subgraph TEAM[三人协作入口]
+        A[A 队长 / 建模架构]
+        B[B 数据 / 计算]
+        C[C 论文 / 可视化]
+    end
+
+    subgraph CONTROL[任务与治理]
+        ISSUE[Issue 与任务清单]
+        DECISION[决策日志]
+        AI[AI 使用记录]
+        RISK[风险登记]
+    end
+
+    subgraph GIT[私有 Git 仓库]
+        MAIN[main 稳定集成]
+        BRANCH[任务分支<br/>data / model / exp / paper / docs]
+        PR[Pull Request + 队友审阅]
+        RELEASE[release/huawei-cup-2026]
+    end
+
+    subgraph DATA[数据与计算链路]
+        PROBLEM[题目与公开资料]
+        BRIEF[题目简报<br/>problem-brief.md]
+        RAW[原始数据<br/>只读 + SHA256]
+        MANIFEST[数据 manifest]
+        PIPELINE[数据处理脚本<br/>src / scripts]
+        CLEAN[interim / processed]
+        CONFIG[实验配置<br/>configs/*.yaml]
+        RUN[批量实验<br/>experiments/runs/run_id]
+        METRIC[指标、日志、结论]
+    end
+
+    subgraph PAPER[论文生产链路]
+        FIG[图表生成脚本]
+        SECTIONS[LaTeX 章节<br/>paper/sections]
+        MAIN_TEX[main.tex + refs.bib]
+        XELATEX[XeLaTeX 编译]
+        PDF[最终 PDF]
+    end
+
+    subgraph SUBMIT[封卷与提交]
+        CHECK[双人合规检查]
+        HASH[PDF SHA256 / MD5]
+        ATTACH[程序与结果附件]
+        RECEIPT[上传回执与只读归档]
+    end
+
+    A --> ISSUE
+    B --> ISSUE
+    C --> ISSUE
+    ISSUE --> BRANCH
+    BRANCH --> PR
+    PR --> MAIN
+    MAIN --> RELEASE
+    DECISION -.-> MAIN
+    AI -.-> PR
+    RISK -.-> ISSUE
+
+    PROBLEM --> BRIEF
+    BRIEF --> RAW
+    RAW --> MANIFEST
+    MANIFEST --> PIPELINE
+    PIPELINE --> CLEAN
+    CLEAN --> CONFIG
+    CONFIG --> RUN
+    RUN --> METRIC
+    METRIC --> FIG
+    METRIC --> SECTIONS
+    FIG --> MAIN_TEX
+    SECTIONS --> MAIN_TEX
+    MAIN_TEX --> XELATEX
+    XELATEX --> PDF
+
+    PDF --> CHECK
+    RELEASE --> CHECK
+    CHECK --> HASH
+    HASH --> ATTACH
+    ATTACH --> RECEIPT
+    MANIFEST -.DVC / LFS / 对象存储.-> RAW
+    RUN -.本地缓存 + 远程备份.-> METRIC
+
+    classDef person fill:#e8f1ff,stroke:#3973b8,color:#102a43;
+    classDef control fill:#fff4d6,stroke:#b7791f,color:#4a2c00;
+    classDef repo fill:#e6ffed,stroke:#2f855a,color:#17351f;
+    classDef data fill:#f0e7ff,stroke:#805ad5,color:#2d174f;
+    classDef paper fill:#ffe8ee,stroke:#c53030,color:#4a1010;
+    classDef submit fill:#e6fffa,stroke:#25855a,color:#123c32;
+    class A,B,C person;
+    class ISSUE,DECISION,AI,RISK control;
+    class MAIN,BRANCH,PR,RELEASE repo;
+    class PROBLEM,BRIEF,RAW,MANIFEST,PIPELINE,CLEAN,CONFIG,RUN,METRIC data;
+    class FIG,SECTIONS,MAIN_TEX,XELATEX,PDF paper;
+    class CHECK,HASH,ATTACH,RECEIPT submit;
+```
+
+## 快速使用
+
+1. GitHub 直接预览 `architecture-flow.md`。
+2. VS Code 安装 Mermaid 预览插件，编辑 `.mmd` 后实时查看。
+3. 需要 SVG/PNG 时，再安装 Mermaid CLI 导出，不改变 `.mmd` 源文件。
+
+## 阅读顺序
+
+先看蓝色的三人入口和绿色的 Git 集成，再看紫色的数据实验链路，接着看粉色的 LaTeX 论文链路，最后看青色的封卷提交链路。虚线表示治理、备份和大文件存储关系，不是主处理顺序。

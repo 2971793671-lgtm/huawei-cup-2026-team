@@ -44,4 +44,4 @@ deliverables/          封卷和提交材料
 
 ## 协作入口
 
-先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)、[docs/architecture.md](docs/architecture.md) 和 [governance/release-checklist.md](governance/release-checklist.md)。
+先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)、[docs/architecture.md](docs/architecture.md)、[全流程架构图](docs/architecture-flow.md) 和 [governance/release-checklist.md](governance/release-checklist.md)。
