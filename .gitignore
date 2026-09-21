@@ -1,0 +1,52 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/.conda/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Large or sensitive data: keep manifests in Git, not raw files
+data/raw/*
+data/interim/*
+data/processed/*
+data/cache/*
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.pkl
+models/*.joblib
+experiments/runs/*/artifacts/
+
+# LaTeX build products
+paper/*.aux
+paper/*.bbl
+paper/*.bcf
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.lof
+paper/*.log
+paper/*.lot
+paper/*.out
+paper/*.run.xml
+paper/*.synctex.gz
+paper/*.toc
+paper/build/
+
+# Local IDE and OS files
+.idea/
+.vscode/settings.json
+.DS_Store
+Thumbs.db
+
+# Temporary release files
+deliverables/staging/
