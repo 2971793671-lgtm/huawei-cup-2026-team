@@ -1,19 +1,24 @@
 # 全流程架构图
 
-这张图描述从题目进入、数据处理、批量实验、LaTeX 写作，到最终封卷提交的完整链路。图源保存在 `architecture-flow.mmd`，本 Markdown 文件中的 Mermaid 代码可以直接在 GitHub 和支持 Mermaid 的 VS Code 插件中预览。
+这张图描述从题目进入、任务卡与提示词治理、数据处理、批量实验、LaTeX 写作，到最终封卷提交的完整链路。图源保存在 `architecture-flow.mmd`，本 Markdown 文件中的 Mermaid 代码可以直接在 GitHub 和支持 Mermaid 的 VS Code 插件中预览。
 
 ```mermaid
 flowchart TB
     subgraph TEAM[三人协作入口]
-        A[A 队长 / 建模架构]
-        B[B 数据 / 计算]
-        C[C 论文 / 可视化]
+        A[A 架构 + 算法负责人]
+        B[B 实现 + 实验负责人]
+        C[C 实现 + 论文 + 图表负责人]
     end
 
     subgraph CONTROL[任务与治理]
         ISSUE[Issue 与任务清单]
+        TASK[Task Card<br/>Owner / Reviewer / 验收]
+        PROMPT[Prompt Registry<br/>prompt_id@version]
+        PRUN[Prompt Run<br/>设备 / 模型 / 输出哈希]
+        REVIEW[Prompt Review<br/>评测 / 回滚]
         DECISION[决策日志]
-        AI[AI 使用记录]
+        AI[AI 使用摘要日志]
+        HANDOFF[跨设备 Handoff]
         RISK[风险登记]
     end
 
@@ -55,12 +60,20 @@ flowchart TB
     A --> ISSUE
     B --> ISSUE
     C --> ISSUE
-    ISSUE --> BRANCH
+    ISSUE --> TASK
+    TASK --> PROMPT
+    PROMPT --> PRUN
+    PRUN --> REVIEW
+    REVIEW --> BRANCH
+    TASK --> HANDOFF
+    HANDOFF --> BRANCH
     BRANCH --> PR
     PR --> MAIN
     MAIN --> RELEASE
     DECISION -.-> MAIN
-    AI -.-> PR
+    PRUN -.-> AI
+    REVIEW -.-> AI
+    TASK -.-> PR
     RISK -.-> ISSUE
 
     PROBLEM --> BRIEF
@@ -94,7 +107,7 @@ flowchart TB
     classDef paper fill:#ffe8ee,stroke:#c53030,color:#4a1010;
     classDef submit fill:#e6fffa,stroke:#25855a,color:#123c32;
     class A,B,C person;
-    class ISSUE,DECISION,AI,RISK control;
+    class ISSUE,TASK,PROMPT,PRUN,REVIEW,DECISION,AI,HANDOFF,RISK control;
     class MAIN,BRANCH,PR,RELEASE repo;
     class PROBLEM,BRIEF,RAW,MANIFEST,PIPELINE,CLEAN,CONFIG,RUN,METRIC data;
     class FIG,SECTIONS,MAIN_TEX,XELATEX,PDF paper;

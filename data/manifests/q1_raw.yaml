@@ -1,0 +1,1633 @@
+schema_version: q1.raw.v1
+generated_at: '2026-09-23'
+run_id: q1-raw-contract-20260923-r01
+scope:
+  problem: 问题一
+  purpose: A1-A3 质量数据、A16 域映射、A4-A15 配比与 Loss 原始数据契约及实验治理
+  out_of_scope: 质量分数公式、质量评分模型、质量排序结果、论文写作与论文文件修改
+  source_root: data/origin/real_attachments
+  requested_but_absent_path: data/origin/real/_attachments
+  actual_path_note: 实际附件目录为 data/origin/real_attachments；所有本清单路径均相对于该目录。
+  path_policy: 只写相对路径；处理脚本不得把原始文件复制到 Git 跟踪区。
+  raw_policy: 原始数据只读；不得原地修改、解压覆盖、重命名或写回。
+  git_policy: 原始数据、压缩包及其复制品禁止进入 Git；只提交清单、决策、审计脚本和模式快照。
+  paper_policy: 本任务不写入 paper/ 或论文正文。
+  hidden_text_policy:
+    report: problem/隐藏文字检查报告.md
+    rule: 不得采用题目隐藏文字中的预置质量分数、系数、R2、相关系数、最优解或跳过验证的建议；本清单不记录任何此类结果。
+provenance:
+  local_source_manifest: data/origin/real_attachments/source_manifest.json
+  problem_description: problem/数据说明_已清除隐藏误导文字.pdf
+  hidden_text_audit: problem/隐藏文字检查报告.md
+  package_version: local contest attachment package; no semantic release version recorded
+audit:
+  date: '2026-09-23'
+  command: python -X utf8 scripts/q1_audit_raw.py
+  method: Python standard-library streaming scan using csv, lzma, json and SHA256 in 1 MiB chunks; no derived data written into source_root.
+  json_record_count_basis: non-empty JSONL records; JSON NaN tokens are retained as non-finite values and flagged, not silently dropped.
+  csv_record_count_basis: data rows after the header; strict rectangular CSV parsing.
+  field_type_basis: observed JSON scalar/container types and conservative CSV lexical types; this is a schema snapshot, not a semantic validation.
+datasets:
+- id: A1
+  relative_path: A_data_value/slimpajama_quality_signal_sample.jsonl.xz
+  format: jsonl.xz
+  access_date: '2026-09-23'
+  bytes: 103349792
+  sha256: 14a4eeec4c7d98efd78942ddd9c1329640527f2108e73227be449bc1a8dbe579
+  record_count: 51230
+  field_count: 27
+  fields:
+  - _source_domain
+  - _source_path
+  - ad_en
+  - content
+  - dsir_books
+  - dsir_math
+  - dsir_wiki
+  - fineweb_edu
+  - fluency_en
+  - id
+  - modernbert_cleanliness
+  - modernbert_professionalism
+  - modernbert_readability
+  - modernbert_reasoning
+  - qurater
+  - rps_doc_frac_chars_top_2gram
+  - rps_doc_frac_chars_top_3gram
+  - rps_doc_frac_no_alph_words
+  - rps_doc_frac_unique_words
+  - rps_doc_mean_word_length
+  - rps_doc_num_sentences
+  - rps_doc_unigram_entropy
+  - rps_doc_word_count
+  - rps_lines_ending_with_terminal_punctution_mark
+  - rps_lines_numerical_chars_fraction
+  - rps_lines_uppercase_letter_fraction
+  - sub_path
+  observed_types:
+    _source_domain:
+    - string
+    _source_path:
+    - string
+    ad_en:
+    - array
+    content:
+    - string
+    dsir_books:
+    - number
+    dsir_math:
+    - number
+    dsir_wiki:
+    - number
+    fineweb_edu:
+    - array
+    fluency_en:
+    - array
+    id:
+    - string
+    modernbert_cleanliness:
+    - array
+    modernbert_professionalism:
+    - array
+    modernbert_readability:
+    - array
+    modernbert_reasoning:
+    - array
+    qurater:
+    - array
+    rps_doc_frac_chars_top_2gram:
+    - integer
+    - number
+    rps_doc_frac_chars_top_3gram:
+    - integer
+    - number
+    rps_doc_frac_no_alph_words:
+    - number
+    rps_doc_frac_unique_words:
+    - number
+    rps_doc_mean_word_length:
+    - number
+    rps_doc_num_sentences:
+    - integer
+    rps_doc_unigram_entropy:
+    - number
+    rps_doc_word_count:
+    - number
+    rps_lines_ending_with_terminal_punctution_mark:
+    - number
+    rps_lines_numerical_chars_fraction:
+    - number
+    rps_lines_uppercase_letter_fraction:
+    - number
+    sub_path:
+    - string
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  domain_counts:
+    arxiv: 1419
+    book: 171
+    c4: 10000
+    commoncrawl: 9640
+    github: 10000
+    stackexchange: 10000
+    wikipedia: 10000
+  nonfinite_token_counts:
+    NaN: 108
+  source: SlimPajama-Meta-rater
+  source_url: https://huggingface.co/datasets/opendatalab/SlimPajama-Meta-rater
+  data_nature: 真实质量信号
+  field_semantics:
+    quality_metrics:
+    - fineweb_edu
+    - fluency_en
+    - modernbert_cleanliness
+    - modernbert_readability
+    - modernbert_reasoning
+    - modernbert_professionalism
+    - dsir_books
+    - dsir_wiki
+    - dsir_math
+    - qurater
+    - ad_en
+    - rps_doc_word_count
+    - rps_doc_num_sentences
+    - rps_doc_unigram_entropy
+    - rps_doc_frac_unique_words
+    - rps_doc_frac_no_alph_words
+    - rps_doc_frac_chars_top_2gram
+    - rps_doc_frac_chars_top_3gram
+    - rps_lines_uppercase_letter_fraction
+    - rps_lines_ending_with_terminal_punctution_mark
+    - rps_lines_numerical_chars_fraction
+    - rps_doc_mean_word_length
+    list_valued_quality_metrics:
+    - ad_en
+    - fineweb_edu
+    - fluency_en
+    - modernbert_cleanliness
+    - modernbert_professionalism
+    - modernbert_readability
+    - modernbert_reasoning
+    - qurater
+    auxiliary_fields:
+    - id
+    - content
+    - sub_path
+    - _source_domain
+    - _source_path
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验上游条款。
+  description: 按质量信号域抽样的主质量样本；不是另行生成的独立实验数据。
+  domain_coverage:
+    mode: direct field
+    field: _source_domain
+    counts:
+      arxiv: 1419
+      book: 171
+      c4: 10000
+      commoncrawl: 9640
+      github: 10000
+      stackexchange: 10000
+      wikipedia: 10000
+  role:
+    fit: 允许作为质量预处理与评分拟合候选集；拟合参数只能由 A1 的拟合分区估计。
+    internal_validation: A1 内部留出分区；分割规则、随机种子和分层/分组口径须在正式运行配置中冻结。
+    external_validation: 不承担外部验证。
+  integrity_notes:
+  - 所有 51230 条非空记录均为 27 字段，重复键记录数为 0。
+  - 检测到 JSON 非有限数值 token NaN 共 108 次；保留原值语义，后续预处理必须显式规定处理方式，不得静默删除或替换。
+- id: A2
+  relative_path: A_data_value/slimpajama_quality_extended/arxiv_part-6777d8857c6e-000486.jsonl.xz
+  format: jsonl.xz
+  access_date: '2026-09-23'
+  bytes: 3652724
+  sha256: ae1e3399f84f605d994fc60b46984d742e14abb3355d8e7a91822eae1b99e16a
+  record_count: 17523
+  field_count: 24
+  fields:
+  - ad_en
+  - dsir_books
+  - dsir_math
+  - dsir_wiki
+  - fineweb_edu
+  - fluency_en
+  - id
+  - modernbert_cleanliness
+  - modernbert_professionalism
+  - modernbert_readability
+  - modernbert_reasoning
+  - qurater
+  - rps_doc_frac_chars_top_2gram
+  - rps_doc_frac_chars_top_3gram
+  - rps_doc_frac_no_alph_words
+  - rps_doc_frac_unique_words
+  - rps_doc_mean_word_length
+  - rps_doc_num_sentences
+  - rps_doc_unigram_entropy
+  - rps_doc_word_count
+  - rps_lines_ending_with_terminal_punctution_mark
+  - rps_lines_numerical_chars_fraction
+  - rps_lines_uppercase_letter_fraction
+  - sub_path
+  observed_types:
+    ad_en:
+    - array
+    dsir_books:
+    - number
+    dsir_math:
+    - number
+    dsir_wiki:
+    - number
+    fineweb_edu:
+    - array
+    fluency_en:
+    - array
+    id:
+    - string
+    modernbert_cleanliness:
+    - array
+    modernbert_professionalism:
+    - array
+    modernbert_readability:
+    - array
+    modernbert_reasoning:
+    - array
+    qurater:
+    - array
+    rps_doc_frac_chars_top_2gram:
+    - number
+    rps_doc_frac_chars_top_3gram:
+    - number
+    rps_doc_frac_no_alph_words:
+    - number
+    rps_doc_frac_unique_words:
+    - number
+    rps_doc_mean_word_length:
+    - number
+    rps_doc_num_sentences:
+    - integer
+    rps_doc_unigram_entropy:
+    - number
+    rps_doc_word_count:
+    - number
+    rps_lines_ending_with_terminal_punctution_mark:
+    - number
+    rps_lines_numerical_chars_fraction:
+    - number
+    rps_lines_uppercase_letter_fraction:
+    - number
+    sub_path:
+    - string
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  domain_counts: {}
+  nonfinite_token_counts: {}
+  source: SlimPajama-Meta-rater
+  source_url: https://huggingface.co/datasets/opendatalab/SlimPajama-Meta-rater
+  data_nature: 真实质量信号
+  field_semantics:
+    quality_metrics:
+    - fineweb_edu
+    - fluency_en
+    - modernbert_cleanliness
+    - modernbert_readability
+    - modernbert_reasoning
+    - modernbert_professionalism
+    - dsir_books
+    - dsir_wiki
+    - dsir_math
+    - qurater
+    - ad_en
+    - rps_doc_word_count
+    - rps_doc_num_sentences
+    - rps_doc_unigram_entropy
+    - rps_doc_frac_unique_words
+    - rps_doc_frac_no_alph_words
+    - rps_doc_frac_chars_top_2gram
+    - rps_doc_frac_chars_top_3gram
+    - rps_lines_uppercase_letter_fraction
+    - rps_lines_ending_with_terminal_punctution_mark
+    - rps_lines_numerical_chars_fraction
+    - rps_doc_mean_word_length
+    list_valued_quality_metrics:
+    - ad_en
+    - fineweb_edu
+    - fluency_en
+    - modernbert_cleanliness
+    - modernbert_professionalism
+    - modernbert_readability
+    - modernbert_reasoning
+    - qurater
+    auxiliary_fields:
+    - id
+    - sub_path
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验上游条款。
+  description: arxiv 扩展质量信号；来源域由文件名/相对路径推断。
+  domain_coverage:
+    mode: inferred from relative path
+    domains:
+    - arxiv
+  role:
+    fit: 禁止用于拟合、特征选择、方向确定、阈值选择或调参。
+    internal_validation: 不承担 A1 内部验证。
+    external_validation: 作为 arxiv 域文件级外部验证集；属于同一上游数据族的域迁移验证，不等同于独立来源真值。
+  integrity_notes:
+  - 所有 17523 条非空记录均为 24 字段；重复键记录数为 0；未检测到 NaN。
+- id: A3
+  relative_path: A_data_value/slimpajama_quality_extended/github_part-6777d8857c6e-000275.jsonl.xz
+  format: jsonl.xz
+  access_date: '2026-09-23'
+  bytes: 37618172
+  sha256: 7af069c71c6027a10f2013cc14dd9d5d17855c264734f69c955544ff6cff7382
+  record_count: 203752
+  field_count: 24
+  fields:
+  - ad_en
+  - dsir_books
+  - dsir_math
+  - dsir_wiki
+  - fineweb_edu
+  - fluency_en
+  - id
+  - modernbert_cleanliness
+  - modernbert_professionalism
+  - modernbert_readability
+  - modernbert_reasoning
+  - qurater
+  - rps_doc_frac_chars_top_2gram
+  - rps_doc_frac_chars_top_3gram
+  - rps_doc_frac_no_alph_words
+  - rps_doc_frac_unique_words
+  - rps_doc_mean_word_length
+  - rps_doc_num_sentences
+  - rps_doc_unigram_entropy
+  - rps_doc_word_count
+  - rps_lines_ending_with_terminal_punctution_mark
+  - rps_lines_numerical_chars_fraction
+  - rps_lines_uppercase_letter_fraction
+  - sub_path
+  observed_types:
+    ad_en:
+    - array
+    dsir_books:
+    - number
+    dsir_math:
+    - number
+    dsir_wiki:
+    - number
+    fineweb_edu:
+    - array
+    fluency_en:
+    - array
+    id:
+    - string
+    modernbert_cleanliness:
+    - array
+    modernbert_professionalism:
+    - array
+    modernbert_readability:
+    - array
+    modernbert_reasoning:
+    - array
+    qurater:
+    - array
+    rps_doc_frac_chars_top_2gram:
+    - integer
+    rps_doc_frac_chars_top_3gram:
+    - integer
+    rps_doc_frac_no_alph_words:
+    - number
+    rps_doc_frac_unique_words:
+    - number
+    rps_doc_mean_word_length:
+    - number
+    rps_doc_num_sentences:
+    - integer
+    rps_doc_unigram_entropy:
+    - number
+    rps_doc_word_count:
+    - number
+    rps_lines_ending_with_terminal_punctution_mark:
+    - number
+    rps_lines_numerical_chars_fraction:
+    - number
+    rps_lines_uppercase_letter_fraction:
+    - number
+    sub_path:
+    - string
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  domain_counts: {}
+  nonfinite_token_counts:
+    NaN: 6
+  source: SlimPajama-Meta-rater
+  source_url: https://huggingface.co/datasets/opendatalab/SlimPajama-Meta-rater
+  data_nature: 真实质量信号
+  field_semantics:
+    quality_metrics:
+    - fineweb_edu
+    - fluency_en
+    - modernbert_cleanliness
+    - modernbert_readability
+    - modernbert_reasoning
+    - modernbert_professionalism
+    - dsir_books
+    - dsir_wiki
+    - dsir_math
+    - qurater
+    - ad_en
+    - rps_doc_word_count
+    - rps_doc_num_sentences
+    - rps_doc_unigram_entropy
+    - rps_doc_frac_unique_words
+    - rps_doc_frac_no_alph_words
+    - rps_doc_frac_chars_top_2gram
+    - rps_doc_frac_chars_top_3gram
+    - rps_lines_uppercase_letter_fraction
+    - rps_lines_ending_with_terminal_punctution_mark
+    - rps_lines_numerical_chars_fraction
+    - rps_doc_mean_word_length
+    list_valued_quality_metrics:
+    - ad_en
+    - fineweb_edu
+    - fluency_en
+    - modernbert_cleanliness
+    - modernbert_professionalism
+    - modernbert_readability
+    - modernbert_reasoning
+    - qurater
+    auxiliary_fields:
+    - id
+    - sub_path
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验上游条款。
+  description: github 扩展质量信号；来源域由文件名/相对路径推断。
+  domain_coverage:
+    mode: inferred from relative path
+    domains:
+    - github
+  role:
+    fit: 禁止用于拟合、特征选择、方向确定、阈值选择或调参。
+    internal_validation: 不承担 A1 内部验证。
+    external_validation: 作为 github 域文件级外部验证集；属于同一上游数据族的域迁移验证，不等同于独立来源真值。
+  integrity_notes:
+  - 所有 203752 条非空记录均为 24 字段；重复键记录数为 0。
+  - 检测到 JSON 非有限数值 token NaN 共 6 次；后续预处理必须显式规定处理方式，不得静默删除或替换。
+- id: A4
+  relative_path: A_data_value/regmix_tables/train_mixture_1m.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 46412
+  sha256: 04a32ef4ab594376bf90e11404c033668f887c351d6a03ad3744824c7296a2d8
+  record_count: 512
+  field_count: 18
+  fields:
+  - index
+  - train_the_pile_arxiv
+  - train_the_pile_freelaw
+  - train_the_pile_nih_exporter
+  - train_the_pile_pubmed_central
+  - train_the_pile_wikipedia_en
+  - train_the_pile_dm_mathematics
+  - train_the_pile_github
+  - train_the_pile_philpapers
+  - train_the_pile_stackexchange
+  - train_the_pile_enron_emails
+  - train_the_pile_gutenberg_pg_19
+  - train_the_pile_pile_cc
+  - train_the_pile_ubuntu_irc
+  - train_the_pile_europarl
+  - train_the_pile_hackernews
+  - train_the_pile_pubmed_abstracts
+  - train_the_pile_uspto_backgrounds
+  observed_types:
+    index:
+    - integer
+    train_the_pile_arxiv:
+    - number
+    train_the_pile_freelaw:
+    - number
+    train_the_pile_nih_exporter:
+    - number
+    train_the_pile_pubmed_central:
+    - number
+    train_the_pile_wikipedia_en:
+    - number
+    train_the_pile_dm_mathematics:
+    - number
+    train_the_pile_github:
+    - number
+    train_the_pile_philpapers:
+    - number
+    train_the_pile_stackexchange:
+    - number
+    train_the_pile_enron_emails:
+    - number
+    train_the_pile_gutenberg_pg_19:
+    - number
+    train_the_pile_pile_cc:
+    - number
+    train_the_pile_ubuntu_irc:
+    - number
+    train_the_pile_europarl:
+    - number
+    train_the_pile_hackernews:
+    - number
+    train_the_pile_pubmed_abstracts:
+    - number
+    train_the_pile_uspto_backgrounds:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: RegMix
+  source_url: https://github.com/sail-sg/regmix
+  data_nature: 真实训练配比
+  role: train fit
+  description: 配方拟合输入；17 个 train_the_pile_* 配比列 + index。
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验 RegMix 上游条款。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    mixture_columns:
+    - train_the_pile_arxiv
+    - train_the_pile_freelaw
+    - train_the_pile_nih_exporter
+    - train_the_pile_pubmed_central
+    - train_the_pile_wikipedia_en
+    - train_the_pile_dm_mathematics
+    - train_the_pile_github
+    - train_the_pile_philpapers
+    - train_the_pile_stackexchange
+    - train_the_pile_enron_emails
+    - train_the_pile_gutenberg_pg_19
+    - train_the_pile_pile_cc
+    - train_the_pile_ubuntu_irc
+    - train_the_pile_europarl
+    - train_the_pile_hackernews
+    - train_the_pile_pubmed_abstracts
+    - train_the_pile_uspto_backgrounds
+- id: A5
+  relative_path: A_data_value/regmix_tables/train_pile_loss_1m.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 121898
+  sha256: 49a959aa07ce5c20831d5abe3a7896ff0cd90a398bd407c8913fd5588be0465a
+  record_count: 512
+  field_count: 14
+  fields:
+  - index
+  - metric/the_pile_arxiv_val_loss
+  - metric/the_pile_freelaw_val_loss
+  - metric/the_pile_pubmed_central_val_loss
+  - metric/the_pile_wikipedia_en_val_loss
+  - metric/the_pile_dm_mathematics_val_loss
+  - metric/the_pile_github_val_loss
+  - metric/the_pile_stackexchange_val_loss
+  - metric/the_pile_gutenberg_pg_19_val_loss
+  - metric/the_pile_pile_cc_val_loss
+  - metric/the_pile_ubuntu_irc_val_loss
+  - metric/the_pile_hackernews_val_loss
+  - metric/the_pile_pubmed_abstracts_val_loss
+  - metric/the_pile_uspto_backgrounds_val_loss
+  observed_types:
+    index:
+    - integer
+    metric/the_pile_arxiv_val_loss:
+    - number
+    metric/the_pile_freelaw_val_loss:
+    - number
+    metric/the_pile_pubmed_central_val_loss:
+    - number
+    metric/the_pile_wikipedia_en_val_loss:
+    - number
+    metric/the_pile_dm_mathematics_val_loss:
+    - number
+    metric/the_pile_github_val_loss:
+    - number
+    metric/the_pile_stackexchange_val_loss:
+    - number
+    metric/the_pile_gutenberg_pg_19_val_loss:
+    - number
+    metric/the_pile_pile_cc_val_loss:
+    - number
+    metric/the_pile_ubuntu_irc_val_loss:
+    - number
+    metric/the_pile_hackernews_val_loss:
+    - number
+    metric/the_pile_pubmed_abstracts_val_loss:
+    - number
+    metric/the_pile_uspto_backgrounds_val_loss:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: RegMix
+  source_url: https://github.com/sail-sg/regmix
+  data_nature: 真实训练 Loss
+  role: train fit target
+  description: 与 A4 按 index 对齐的 13 个验证域交叉熵 Loss + index。
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验 RegMix 上游条款。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    loss_columns:
+    - metric/the_pile_arxiv_val_loss
+    - metric/the_pile_freelaw_val_loss
+    - metric/the_pile_pubmed_central_val_loss
+    - metric/the_pile_wikipedia_en_val_loss
+    - metric/the_pile_dm_mathematics_val_loss
+    - metric/the_pile_github_val_loss
+    - metric/the_pile_stackexchange_val_loss
+    - metric/the_pile_gutenberg_pg_19_val_loss
+    - metric/the_pile_pile_cc_val_loss
+    - metric/the_pile_ubuntu_irc_val_loss
+    - metric/the_pile_hackernews_val_loss
+    - metric/the_pile_pubmed_abstracts_val_loss
+    - metric/the_pile_uspto_backgrounds_val_loss
+- id: A6
+  relative_path: A_data_value/regmix_tables/test_mixture_1m.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 23537
+  sha256: 197267b7d6f15367e2f46c881e564c35b0d34e51b1754bb09d07e650cf8e1ce8
+  record_count: 256
+  field_count: 18
+  fields:
+  - index
+  - train_the_pile_arxiv
+  - train_the_pile_freelaw
+  - train_the_pile_nih_exporter
+  - train_the_pile_pubmed_central
+  - train_the_pile_wikipedia_en
+  - train_the_pile_dm_mathematics
+  - train_the_pile_github
+  - train_the_pile_philpapers
+  - train_the_pile_stackexchange
+  - train_the_pile_enron_emails
+  - train_the_pile_gutenberg_pg_19
+  - train_the_pile_pile_cc
+  - train_the_pile_ubuntu_irc
+  - train_the_pile_europarl
+  - train_the_pile_hackernews
+  - train_the_pile_pubmed_abstracts
+  - train_the_pile_uspto_backgrounds
+  observed_types:
+    index:
+    - integer
+    train_the_pile_arxiv:
+    - number
+    train_the_pile_freelaw:
+    - number
+    train_the_pile_nih_exporter:
+    - number
+    train_the_pile_pubmed_central:
+    - number
+    train_the_pile_wikipedia_en:
+    - number
+    train_the_pile_dm_mathematics:
+    - number
+    train_the_pile_github:
+    - number
+    train_the_pile_philpapers:
+    - number
+    train_the_pile_stackexchange:
+    - number
+    train_the_pile_enron_emails:
+    - number
+    train_the_pile_gutenberg_pg_19:
+    - number
+    train_the_pile_pile_cc:
+    - number
+    train_the_pile_ubuntu_irc:
+    - number
+    train_the_pile_europarl:
+    - number
+    train_the_pile_hackernews:
+    - number
+    train_the_pile_pubmed_abstracts:
+    - number
+    train_the_pile_uspto_backgrounds:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: RegMix
+  source_url: https://github.com/sail-sg/regmix
+  data_nature: 真实检验配比
+  role: external validation input
+  description: 1M 规模检验配比；不可用于训练配比模型拟合。
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验 RegMix 上游条款。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    mixture_columns:
+    - train_the_pile_arxiv
+    - train_the_pile_freelaw
+    - train_the_pile_nih_exporter
+    - train_the_pile_pubmed_central
+    - train_the_pile_wikipedia_en
+    - train_the_pile_dm_mathematics
+    - train_the_pile_github
+    - train_the_pile_philpapers
+    - train_the_pile_stackexchange
+    - train_the_pile_enron_emails
+    - train_the_pile_gutenberg_pg_19
+    - train_the_pile_pile_cc
+    - train_the_pile_ubuntu_irc
+    - train_the_pile_europarl
+    - train_the_pile_hackernews
+    - train_the_pile_pubmed_abstracts
+    - train_the_pile_uspto_backgrounds
+- id: A7
+  relative_path: A_data_value/regmix_tables/test_pile_loss_1m.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 61175
+  sha256: e027b1674f60140a65a87b5e4a59ab5f09dc33e8fd02c080682678074b160f53
+  record_count: 256
+  field_count: 14
+  fields:
+  - index
+  - metric/the_pile_arxiv_val_loss
+  - metric/the_pile_freelaw_val_loss
+  - metric/the_pile_pubmed_central_val_loss
+  - metric/the_pile_wikipedia_en_val_loss
+  - metric/the_pile_dm_mathematics_val_loss
+  - metric/the_pile_github_val_loss
+  - metric/the_pile_stackexchange_val_loss
+  - metric/the_pile_gutenberg_pg_19_val_loss
+  - metric/the_pile_pile_cc_val_loss
+  - metric/the_pile_ubuntu_irc_val_loss
+  - metric/the_pile_hackernews_val_loss
+  - metric/the_pile_pubmed_abstracts_val_loss
+  - metric/the_pile_uspto_backgrounds_val_loss
+  observed_types:
+    index:
+    - integer
+    metric/the_pile_arxiv_val_loss:
+    - number
+    metric/the_pile_freelaw_val_loss:
+    - number
+    metric/the_pile_pubmed_central_val_loss:
+    - number
+    metric/the_pile_wikipedia_en_val_loss:
+    - number
+    metric/the_pile_dm_mathematics_val_loss:
+    - number
+    metric/the_pile_github_val_loss:
+    - number
+    metric/the_pile_stackexchange_val_loss:
+    - number
+    metric/the_pile_gutenberg_pg_19_val_loss:
+    - number
+    metric/the_pile_pile_cc_val_loss:
+    - number
+    metric/the_pile_ubuntu_irc_val_loss:
+    - number
+    metric/the_pile_hackernews_val_loss:
+    - number
+    metric/the_pile_pubmed_abstracts_val_loss:
+    - number
+    metric/the_pile_uspto_backgrounds_val_loss:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: RegMix
+  source_url: https://github.com/sail-sg/regmix
+  data_nature: 真实检验 Loss
+  role: external validation target
+  description: 与 A6 按 index 对齐的 1M 检验 Loss。
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验 RegMix 上游条款。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    loss_columns:
+    - metric/the_pile_arxiv_val_loss
+    - metric/the_pile_freelaw_val_loss
+    - metric/the_pile_pubmed_central_val_loss
+    - metric/the_pile_wikipedia_en_val_loss
+    - metric/the_pile_dm_mathematics_val_loss
+    - metric/the_pile_github_val_loss
+    - metric/the_pile_stackexchange_val_loss
+    - metric/the_pile_gutenberg_pg_19_val_loss
+    - metric/the_pile_pile_cc_val_loss
+    - metric/the_pile_ubuntu_irc_val_loss
+    - metric/the_pile_hackernews_val_loss
+    - metric/the_pile_pubmed_abstracts_val_loss
+    - metric/the_pile_uspto_backgrounds_val_loss
+- id: A8
+  relative_path: A_data_value/regmix_tables/test_mixture_60m.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 23537
+  sha256: 197267b7d6f15367e2f46c881e564c35b0d34e51b1754bb09d07e650cf8e1ce8
+  record_count: 256
+  field_count: 18
+  fields:
+  - index
+  - train_the_pile_arxiv
+  - train_the_pile_freelaw
+  - train_the_pile_nih_exporter
+  - train_the_pile_pubmed_central
+  - train_the_pile_wikipedia_en
+  - train_the_pile_dm_mathematics
+  - train_the_pile_github
+  - train_the_pile_philpapers
+  - train_the_pile_stackexchange
+  - train_the_pile_enron_emails
+  - train_the_pile_gutenberg_pg_19
+  - train_the_pile_pile_cc
+  - train_the_pile_ubuntu_irc
+  - train_the_pile_europarl
+  - train_the_pile_hackernews
+  - train_the_pile_pubmed_abstracts
+  - train_the_pile_uspto_backgrounds
+  observed_types:
+    index:
+    - integer
+    train_the_pile_arxiv:
+    - number
+    train_the_pile_freelaw:
+    - number
+    train_the_pile_nih_exporter:
+    - number
+    train_the_pile_pubmed_central:
+    - number
+    train_the_pile_wikipedia_en:
+    - number
+    train_the_pile_dm_mathematics:
+    - number
+    train_the_pile_github:
+    - number
+    train_the_pile_philpapers:
+    - number
+    train_the_pile_stackexchange:
+    - number
+    train_the_pile_enron_emails:
+    - number
+    train_the_pile_gutenberg_pg_19:
+    - number
+    train_the_pile_pile_cc:
+    - number
+    train_the_pile_ubuntu_irc:
+    - number
+    train_the_pile_europarl:
+    - number
+    train_the_pile_hackernews:
+    - number
+    train_the_pile_pubmed_abstracts:
+    - number
+    train_the_pile_uspto_backgrounds:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: RegMix
+  source_url: https://github.com/sail-sg/regmix
+  data_nature: 真实检验配比
+  role: external validation input
+  description: 60M 规模检验配比；文件哈希与 A6 相同，不能视为独立配方表。
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验 RegMix 上游条款。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    mixture_columns:
+    - train_the_pile_arxiv
+    - train_the_pile_freelaw
+    - train_the_pile_nih_exporter
+    - train_the_pile_pubmed_central
+    - train_the_pile_wikipedia_en
+    - train_the_pile_dm_mathematics
+    - train_the_pile_github
+    - train_the_pile_philpapers
+    - train_the_pile_stackexchange
+    - train_the_pile_enron_emails
+    - train_the_pile_gutenberg_pg_19
+    - train_the_pile_pile_cc
+    - train_the_pile_ubuntu_irc
+    - train_the_pile_europarl
+    - train_the_pile_hackernews
+    - train_the_pile_pubmed_abstracts
+    - train_the_pile_uspto_backgrounds
+- id: A9
+  relative_path: A_data_value/regmix_tables/test_pile_loss_60m.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 61827
+  sha256: 8fe69d59ab7dd4fae4736459f4265ec93c7ed1ad1eca407346052560edc72b5b
+  record_count: 256
+  field_count: 14
+  fields:
+  - index
+  - metric/the_pile_arxiv_val_loss
+  - metric/the_pile_freelaw_val_loss
+  - metric/the_pile_pubmed_central_val_loss
+  - metric/the_pile_wikipedia_en_val_loss
+  - metric/the_pile_dm_mathematics_val_loss
+  - metric/the_pile_github_val_loss
+  - metric/the_pile_stackexchange_val_loss
+  - metric/the_pile_gutenberg_pg_19_val_loss
+  - metric/the_pile_pile_cc_val_loss
+  - metric/the_pile_ubuntu_irc_val_loss
+  - metric/the_pile_hackernews_val_loss
+  - metric/the_pile_pubmed_abstracts_val_loss
+  - metric/the_pile_uspto_backgrounds_val_loss
+  observed_types:
+    index:
+    - integer
+    metric/the_pile_arxiv_val_loss:
+    - number
+    metric/the_pile_freelaw_val_loss:
+    - number
+    metric/the_pile_pubmed_central_val_loss:
+    - number
+    metric/the_pile_wikipedia_en_val_loss:
+    - number
+    metric/the_pile_dm_mathematics_val_loss:
+    - number
+    metric/the_pile_github_val_loss:
+    - number
+    metric/the_pile_stackexchange_val_loss:
+    - number
+    metric/the_pile_gutenberg_pg_19_val_loss:
+    - number
+    metric/the_pile_pile_cc_val_loss:
+    - number
+    metric/the_pile_ubuntu_irc_val_loss:
+    - number
+    metric/the_pile_hackernews_val_loss:
+    - number
+    metric/the_pile_pubmed_abstracts_val_loss:
+    - number
+    metric/the_pile_uspto_backgrounds_val_loss:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: RegMix
+  source_url: https://github.com/sail-sg/regmix
+  data_nature: 真实检验 Loss
+  role: external validation target
+  description: 与 A8 按 index 对齐的 60M 检验 Loss。
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验 RegMix 上游条款。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    loss_columns:
+    - metric/the_pile_arxiv_val_loss
+    - metric/the_pile_freelaw_val_loss
+    - metric/the_pile_pubmed_central_val_loss
+    - metric/the_pile_wikipedia_en_val_loss
+    - metric/the_pile_dm_mathematics_val_loss
+    - metric/the_pile_github_val_loss
+    - metric/the_pile_stackexchange_val_loss
+    - metric/the_pile_gutenberg_pg_19_val_loss
+    - metric/the_pile_pile_cc_val_loss
+    - metric/the_pile_ubuntu_irc_val_loss
+    - metric/the_pile_hackernews_val_loss
+    - metric/the_pile_pubmed_abstracts_val_loss
+    - metric/the_pile_uspto_backgrounds_val_loss
+- id: A10
+  relative_path: A_data_value/regmix_tables/test_mixture_1B.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 6393
+  sha256: dd38052949c0a5f84165bdcb3ae3a331c7f07efd9bb83848bd579dfc4ce75a2c
+  record_count: 64
+  field_count: 18
+  fields:
+  - index
+  - train_the_pile_arxiv
+  - train_the_pile_freelaw
+  - train_the_pile_nih_exporter
+  - train_the_pile_pubmed_central
+  - train_the_pile_wikipedia_en
+  - train_the_pile_dm_mathematics
+  - train_the_pile_github
+  - train_the_pile_philpapers
+  - train_the_pile_stackexchange
+  - train_the_pile_enron_emails
+  - train_the_pile_gutenberg_pg_19
+  - train_the_pile_pile_cc
+  - train_the_pile_ubuntu_irc
+  - train_the_pile_europarl
+  - train_the_pile_hackernews
+  - train_the_pile_pubmed_abstracts
+  - train_the_pile_uspto_backgrounds
+  observed_types:
+    index:
+    - integer
+    train_the_pile_arxiv:
+    - number
+    train_the_pile_freelaw:
+    - number
+    train_the_pile_nih_exporter:
+    - number
+    train_the_pile_pubmed_central:
+    - number
+    train_the_pile_wikipedia_en:
+    - number
+    train_the_pile_dm_mathematics:
+    - number
+    train_the_pile_github:
+    - number
+    train_the_pile_philpapers:
+    - number
+    train_the_pile_stackexchange:
+    - number
+    train_the_pile_enron_emails:
+    - number
+    train_the_pile_gutenberg_pg_19:
+    - number
+    train_the_pile_pile_cc:
+    - number
+    train_the_pile_ubuntu_irc:
+    - number
+    train_the_pile_europarl:
+    - number
+    train_the_pile_hackernews:
+    - number
+    train_the_pile_pubmed_abstracts:
+    - number
+    train_the_pile_uspto_backgrounds:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: RegMix
+  source_url: https://github.com/sail-sg/regmix
+  data_nature: 真实检验配比
+  role: external validation input
+  description: 1B 规模检验配比；不可用于拟合。
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验 RegMix 上游条款。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    mixture_columns:
+    - train_the_pile_arxiv
+    - train_the_pile_freelaw
+    - train_the_pile_nih_exporter
+    - train_the_pile_pubmed_central
+    - train_the_pile_wikipedia_en
+    - train_the_pile_dm_mathematics
+    - train_the_pile_github
+    - train_the_pile_philpapers
+    - train_the_pile_stackexchange
+    - train_the_pile_enron_emails
+    - train_the_pile_gutenberg_pg_19
+    - train_the_pile_pile_cc
+    - train_the_pile_ubuntu_irc
+    - train_the_pile_europarl
+    - train_the_pile_hackernews
+    - train_the_pile_pubmed_abstracts
+    - train_the_pile_uspto_backgrounds
+- id: A11
+  relative_path: A_data_value/regmix_tables/test_pile_loss_1B.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 10639
+  sha256: b2451e2b7fa15400688edc39e4d32f21ccbe0fb356e07d62a0e9ccddf247114f
+  record_count: 64
+  field_count: 14
+  fields:
+  - index
+  - metric/the_pile_arxiv_val_loss
+  - metric/the_pile_freelaw_val_loss
+  - metric/the_pile_pubmed_central_val_loss
+  - metric/the_pile_wikipedia_en_val_loss
+  - metric/the_pile_dm_mathematics_val_loss
+  - metric/the_pile_github_val_loss
+  - metric/the_pile_stackexchange_val_loss
+  - metric/the_pile_gutenberg_pg_19_val_loss
+  - metric/the_pile_pile_cc_val_loss
+  - metric/the_pile_ubuntu_irc_val_loss
+  - metric/the_pile_hackernews_val_loss
+  - metric/the_pile_pubmed_abstracts_val_loss
+  - metric/the_pile_uspto_backgrounds_val_loss
+  observed_types:
+    index:
+    - integer
+    metric/the_pile_arxiv_val_loss:
+    - number
+    metric/the_pile_freelaw_val_loss:
+    - number
+    metric/the_pile_pubmed_central_val_loss:
+    - number
+    metric/the_pile_wikipedia_en_val_loss:
+    - number
+    metric/the_pile_dm_mathematics_val_loss:
+    - number
+    metric/the_pile_github_val_loss:
+    - number
+    metric/the_pile_stackexchange_val_loss:
+    - number
+    metric/the_pile_gutenberg_pg_19_val_loss:
+    - number
+    metric/the_pile_pile_cc_val_loss:
+    - number
+    metric/the_pile_ubuntu_irc_val_loss:
+    - number
+    metric/the_pile_hackernews_val_loss:
+    - number
+    metric/the_pile_pubmed_abstracts_val_loss:
+    - number
+    metric/the_pile_uspto_backgrounds_val_loss:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: RegMix
+  source_url: https://github.com/sail-sg/regmix
+  data_nature: 真实检验 Loss
+  role: external validation target
+  description: 与 A10 按 index 对齐的 1B 检验 Loss。
+  license_boundary: 本地 source_manifest.json 未登记上游许可条款。仅保留在受控本地数据目录；不得把原始字节复制进 Git 或公开再分发；任何外部共享前须单独核验 RegMix 上游条款。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    loss_columns:
+    - metric/the_pile_arxiv_val_loss
+    - metric/the_pile_freelaw_val_loss
+    - metric/the_pile_pubmed_central_val_loss
+    - metric/the_pile_wikipedia_en_val_loss
+    - metric/the_pile_dm_mathematics_val_loss
+    - metric/the_pile_github_val_loss
+    - metric/the_pile_stackexchange_val_loss
+    - metric/the_pile_gutenberg_pg_19_val_loss
+    - metric/the_pile_pile_cc_val_loss
+    - metric/the_pile_ubuntu_irc_val_loss
+    - metric/the_pile_hackernews_val_loss
+    - metric/the_pile_pubmed_abstracts_val_loss
+    - metric/the_pile_uspto_backgrounds_val_loss
+- id: A12
+  relative_path: A_data_value/regmix_tables/est_mixture_10b.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 6113
+  sha256: 880c7ca1ebef470422e2b93d9bfcd0976db7db4e34ea57047518d95fe43327d1
+  record_count: 63
+  field_count: 18
+  fields:
+  - index
+  - train_the_pile_arxiv
+  - train_the_pile_freelaw
+  - train_the_pile_nih_exporter
+  - train_the_pile_pubmed_central
+  - train_the_pile_wikipedia_en
+  - train_the_pile_dm_mathematics
+  - train_the_pile_github
+  - train_the_pile_philpapers
+  - train_the_pile_stackexchange
+  - train_the_pile_enron_emails
+  - train_the_pile_gutenberg_pg_19
+  - train_the_pile_pile_cc
+  - train_the_pile_ubuntu_irc
+  - train_the_pile_europarl
+  - train_the_pile_hackernews
+  - train_the_pile_pubmed_abstracts
+  - train_the_pile_uspto_backgrounds
+  observed_types:
+    index:
+    - integer
+    train_the_pile_arxiv:
+    - number
+    train_the_pile_freelaw:
+    - number
+    train_the_pile_nih_exporter:
+    - number
+    train_the_pile_pubmed_central:
+    - number
+    train_the_pile_wikipedia_en:
+    - number
+    train_the_pile_dm_mathematics:
+    - number
+    train_the_pile_github:
+    - number
+    train_the_pile_philpapers:
+    - number
+    train_the_pile_stackexchange:
+    - number
+    train_the_pile_enron_emails:
+    - number
+    train_the_pile_gutenberg_pg_19:
+    - number
+    train_the_pile_pile_cc:
+    - number
+    train_the_pile_ubuntu_irc:
+    - number
+    train_the_pile_europarl:
+    - number
+    train_the_pile_hackernews:
+    - number
+    train_the_pile_pubmed_abstracts:
+    - number
+    train_the_pile_uspto_backgrounds:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: 题目附件派生关系
+  source_url: null
+  data_nature: 子集配比
+  role: extrapolation input only
+  description: 10B 配比，取自 train 配比子集；不是独立实验验证集。
+  license_boundary: 随题目附件提供的派生/估算数据。不得把原始附件或其未审计副本复制进 Git；不从派生关系推定上游许可。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    mixture_columns:
+    - train_the_pile_arxiv
+    - train_the_pile_freelaw
+    - train_the_pile_nih_exporter
+    - train_the_pile_pubmed_central
+    - train_the_pile_wikipedia_en
+    - train_the_pile_dm_mathematics
+    - train_the_pile_github
+    - train_the_pile_philpapers
+    - train_the_pile_stackexchange
+    - train_the_pile_enron_emails
+    - train_the_pile_gutenberg_pg_19
+    - train_the_pile_pile_cc
+    - train_the_pile_ubuntu_irc
+    - train_the_pile_europarl
+    - train_the_pile_hackernews
+    - train_the_pile_pubmed_abstracts
+    - train_the_pile_uspto_backgrounds
+- id: A13
+  relative_path: A_data_value/regmix_tables/est_pile_loss_10b.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 6467
+  sha256: 226457581f3f59e15e44d8f72dee31fa7492c821699725fef47627d82cf34c0d
+  record_count: 63
+  field_count: 14
+  fields:
+  - index
+  - metric/the_pile_arxiv_val_loss
+  - metric/the_pile_freelaw_val_loss
+  - metric/the_pile_pubmed_central_val_loss
+  - metric/the_pile_wikipedia_en_val_loss
+  - metric/the_pile_dm_mathematics_val_loss
+  - metric/the_pile_github_val_loss
+  - metric/the_pile_stackexchange_val_loss
+  - metric/the_pile_gutenberg_pg_19_val_loss
+  - metric/the_pile_pile_cc_val_loss
+  - metric/the_pile_ubuntu_irc_val_loss
+  - metric/the_pile_hackernews_val_loss
+  - metric/the_pile_pubmed_abstracts_val_loss
+  - metric/the_pile_uspto_backgrounds_val_loss
+  observed_types:
+    index:
+    - integer
+    metric/the_pile_arxiv_val_loss:
+    - number
+    metric/the_pile_freelaw_val_loss:
+    - number
+    metric/the_pile_pubmed_central_val_loss:
+    - number
+    metric/the_pile_wikipedia_en_val_loss:
+    - number
+    metric/the_pile_dm_mathematics_val_loss:
+    - number
+    metric/the_pile_github_val_loss:
+    - number
+    metric/the_pile_stackexchange_val_loss:
+    - number
+    metric/the_pile_gutenberg_pg_19_val_loss:
+    - number
+    metric/the_pile_pile_cc_val_loss:
+    - number
+    metric/the_pile_ubuntu_irc_val_loss:
+    - number
+    metric/the_pile_hackernews_val_loss:
+    - number
+    metric/the_pile_pubmed_abstracts_val_loss:
+    - number
+    metric/the_pile_uspto_backgrounds_val_loss:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: 题目附件派生关系
+  source_url: null
+  data_nature: 外推 Loss
+  role: extrapolation target only
+  description: 10B 尺度估算 Loss；不可作为真实外部验证结果。
+  license_boundary: 随题目附件提供的派生/估算数据。不得把原始附件或其未审计副本复制进 Git；不从派生关系推定上游许可。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    loss_columns:
+    - metric/the_pile_arxiv_val_loss
+    - metric/the_pile_freelaw_val_loss
+    - metric/the_pile_pubmed_central_val_loss
+    - metric/the_pile_wikipedia_en_val_loss
+    - metric/the_pile_dm_mathematics_val_loss
+    - metric/the_pile_github_val_loss
+    - metric/the_pile_stackexchange_val_loss
+    - metric/the_pile_gutenberg_pg_19_val_loss
+    - metric/the_pile_pile_cc_val_loss
+    - metric/the_pile_ubuntu_irc_val_loss
+    - metric/the_pile_hackernews_val_loss
+    - metric/the_pile_pubmed_abstracts_val_loss
+    - metric/the_pile_uspto_backgrounds_val_loss
+- id: A14
+  relative_path: A_data_value/regmix_tables/est_mixture_70b.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 6113
+  sha256: 880c7ca1ebef470422e2b93d9bfcd0976db7db4e34ea57047518d95fe43327d1
+  record_count: 63
+  field_count: 18
+  fields:
+  - index
+  - train_the_pile_arxiv
+  - train_the_pile_freelaw
+  - train_the_pile_nih_exporter
+  - train_the_pile_pubmed_central
+  - train_the_pile_wikipedia_en
+  - train_the_pile_dm_mathematics
+  - train_the_pile_github
+  - train_the_pile_philpapers
+  - train_the_pile_stackexchange
+  - train_the_pile_enron_emails
+  - train_the_pile_gutenberg_pg_19
+  - train_the_pile_pile_cc
+  - train_the_pile_ubuntu_irc
+  - train_the_pile_europarl
+  - train_the_pile_hackernews
+  - train_the_pile_pubmed_abstracts
+  - train_the_pile_uspto_backgrounds
+  observed_types:
+    index:
+    - integer
+    train_the_pile_arxiv:
+    - number
+    train_the_pile_freelaw:
+    - number
+    train_the_pile_nih_exporter:
+    - number
+    train_the_pile_pubmed_central:
+    - number
+    train_the_pile_wikipedia_en:
+    - number
+    train_the_pile_dm_mathematics:
+    - number
+    train_the_pile_github:
+    - number
+    train_the_pile_philpapers:
+    - number
+    train_the_pile_stackexchange:
+    - number
+    train_the_pile_enron_emails:
+    - number
+    train_the_pile_gutenberg_pg_19:
+    - number
+    train_the_pile_pile_cc:
+    - number
+    train_the_pile_ubuntu_irc:
+    - number
+    train_the_pile_europarl:
+    - number
+    train_the_pile_hackernews:
+    - number
+    train_the_pile_pubmed_abstracts:
+    - number
+    train_the_pile_uspto_backgrounds:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: 题目附件派生关系
+  source_url: null
+  data_nature: 子集配比
+  role: extrapolation input only
+  description: 70B 配比，取自 train 配比子集；文件哈希与 A12 相同。
+  license_boundary: 随题目附件提供的派生/估算数据。不得把原始附件或其未审计副本复制进 Git；不从派生关系推定上游许可。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    mixture_columns:
+    - train_the_pile_arxiv
+    - train_the_pile_freelaw
+    - train_the_pile_nih_exporter
+    - train_the_pile_pubmed_central
+    - train_the_pile_wikipedia_en
+    - train_the_pile_dm_mathematics
+    - train_the_pile_github
+    - train_the_pile_philpapers
+    - train_the_pile_stackexchange
+    - train_the_pile_enron_emails
+    - train_the_pile_gutenberg_pg_19
+    - train_the_pile_pile_cc
+    - train_the_pile_ubuntu_irc
+    - train_the_pile_europarl
+    - train_the_pile_hackernews
+    - train_the_pile_pubmed_abstracts
+    - train_the_pile_uspto_backgrounds
+- id: A15
+  relative_path: A_data_value/regmix_tables/est_pile_loss_70b.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 6467
+  sha256: d0883b2d1a44da9386a6d629a3623c724ee291cba1ac87b6d1079e5377307682
+  record_count: 63
+  field_count: 14
+  fields:
+  - index
+  - metric/the_pile_arxiv_val_loss
+  - metric/the_pile_freelaw_val_loss
+  - metric/the_pile_pubmed_central_val_loss
+  - metric/the_pile_wikipedia_en_val_loss
+  - metric/the_pile_dm_mathematics_val_loss
+  - metric/the_pile_github_val_loss
+  - metric/the_pile_stackexchange_val_loss
+  - metric/the_pile_gutenberg_pg_19_val_loss
+  - metric/the_pile_pile_cc_val_loss
+  - metric/the_pile_ubuntu_irc_val_loss
+  - metric/the_pile_hackernews_val_loss
+  - metric/the_pile_pubmed_abstracts_val_loss
+  - metric/the_pile_uspto_backgrounds_val_loss
+  observed_types:
+    index:
+    - integer
+    metric/the_pile_arxiv_val_loss:
+    - number
+    metric/the_pile_freelaw_val_loss:
+    - number
+    metric/the_pile_pubmed_central_val_loss:
+    - number
+    metric/the_pile_wikipedia_en_val_loss:
+    - number
+    metric/the_pile_dm_mathematics_val_loss:
+    - number
+    metric/the_pile_github_val_loss:
+    - number
+    metric/the_pile_stackexchange_val_loss:
+    - number
+    metric/the_pile_gutenberg_pg_19_val_loss:
+    - number
+    metric/the_pile_pile_cc_val_loss:
+    - number
+    metric/the_pile_ubuntu_irc_val_loss:
+    - number
+    metric/the_pile_hackernews_val_loss:
+    - number
+    metric/the_pile_pubmed_abstracts_val_loss:
+    - number
+    metric/the_pile_uspto_backgrounds_val_loss:
+    - number
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: 题目附件派生关系
+  source_url: null
+  data_nature: 外推 Loss
+  role: extrapolation target only
+  description: 70B 尺度估算 Loss；不可作为真实外部验证结果。
+  license_boundary: 随题目附件提供的派生/估算数据。不得把原始附件或其未审计副本复制进 Git；不从派生关系推定上游许可。
+  integrity_notes:
+  - CSV 无表头重复、无行宽错误、无空单元格；index 唯一。
+  field_semantics:
+    key: index
+    loss_columns:
+    - metric/the_pile_arxiv_val_loss
+    - metric/the_pile_freelaw_val_loss
+    - metric/the_pile_pubmed_central_val_loss
+    - metric/the_pile_wikipedia_en_val_loss
+    - metric/the_pile_dm_mathematics_val_loss
+    - metric/the_pile_github_val_loss
+    - metric/the_pile_stackexchange_val_loss
+    - metric/the_pile_gutenberg_pg_19_val_loss
+    - metric/the_pile_pile_cc_val_loss
+    - metric/the_pile_ubuntu_irc_val_loss
+    - metric/the_pile_hackernews_val_loss
+    - metric/the_pile_pubmed_abstracts_val_loss
+    - metric/the_pile_uspto_backgrounds_val_loss
+- id: A16
+  relative_path: A_data_value/domain_mapping_guide.csv
+  format: csv
+  access_date: '2026-09-23'
+  bytes: 1296
+  sha256: 4a4479f41b9f46116e688cd0c13ccdad4e687192fc1a38c4add690771ebff480
+  record_count: 17
+  field_count: 4
+  fields:
+  - mixture_domain
+  - quality_domain
+  - mapping_type
+  - note
+  observed_types:
+    mixture_domain:
+    - string
+    quality_domain:
+    - string
+    mapping_type:
+    - string
+    note:
+    - string
+  provenance_record: data/origin/real_attachments/source_manifest.json
+  parent_version: local contest attachment package; no semantic release version recorded
+  source: 题目附件人工整理映射
+  source_url: null
+  data_nature: 参考映射
+  description: 17 个配方域到质量域的参考映射，mapping_type 取 direct / near_direct / inferred 等人工口径。
+  role: 仅用于域名对齐和映射敏感性记录，不作为质量分数标签，不参与拟合目标。
+  field_semantics:
+    key: mixture_domain
+    fields:
+    - mixture_domain
+    - quality_domain
+    - mapping_type
+    - note
+  license_boundary: 题目附件中的人工整理参考文件；仅限本题受控分析使用，不把题目附件原始包公开分发。
+  integrity_notes:
+  - 17 行 × 4 列；无表头重复、无行宽错误、无空单元格。
+pair_alignment:
+- mixture: A4
+  loss: A5
+  mixture_index_count: 512
+  loss_index_count: 512
+  mixture_index_unique: 512
+  loss_index_unique: 512
+  exact_index_set_match: true
+  intersection_count: 512
+  mixture_only_count: 0
+  loss_only_count: 0
+- mixture: A6
+  loss: A7
+  mixture_index_count: 256
+  loss_index_count: 256
+  mixture_index_unique: 256
+  loss_index_unique: 256
+  exact_index_set_match: true
+  intersection_count: 256
+  mixture_only_count: 0
+  loss_only_count: 0
+- mixture: A8
+  loss: A9
+  mixture_index_count: 256
+  loss_index_count: 256
+  mixture_index_unique: 256
+  loss_index_unique: 256
+  exact_index_set_match: true
+  intersection_count: 256
+  mixture_only_count: 0
+  loss_only_count: 0
+- mixture: A10
+  loss: A11
+  mixture_index_count: 64
+  loss_index_count: 64
+  mixture_index_unique: 64
+  loss_index_unique: 64
+  exact_index_set_match: true
+  intersection_count: 64
+  mixture_only_count: 0
+  loss_only_count: 0
+- mixture: A12
+  loss: A13
+  mixture_index_count: 63
+  loss_index_count: 63
+  mixture_index_unique: 63
+  loss_index_unique: 63
+  exact_index_set_match: true
+  intersection_count: 63
+  mixture_only_count: 0
+  loss_only_count: 0
+- mixture: A14
+  loss: A15
+  mixture_index_count: 63
+  loss_index_count: 63
+  mixture_index_unique: 63
+  loss_index_unique: 63
+  exact_index_set_match: true
+  intersection_count: 63
+  mixture_only_count: 0
+  loss_only_count: 0
+experiment_roles:
+  quality:
+    fit:
+    - A1 fit partition only
+    internal_validation:
+    - A1 held-out partition only
+    external_validation:
+    - A2 arxiv file/domain holdout
+    - A3 github file/domain holdout
+    leakage_controls:
+    - A2/A3 不得参与质量预处理参数、特征选择、方向、权重、阈值或超参数的估计。
+    - A1 与 A2/A3 同属上游质量信号族，A2/A3 的外部验证解释限于文件/域迁移，不能宣称独立来源真值。
+    - 8 个列表型质量字段的标量化规则须在拟合前冻结，并在所有质量数据上复用。
+  mixture_loss:
+    fit:
+    - A4 train_mixture_1m + A5 train_pile_loss_1m
+    external_validation:
+    - A6-A11 observed test tables at 1M, 60M and 1B
+    extrapolation_only:
+    - A12-A15 estimated/subset tables at 10B and 70B
+    mapping:
+    - A16 reference mapping only; not a fitted target
+    pair_rule: 每一对配方表与 Loss 表按 index 连接；不得按文件行号隐式连接。
+notes:
+- A_data_value/slimpajama_quality_signal_sample.jsonl 在本地附件目录中作为未压缩同名副本存在，但不属于本契约的 canonical 输入；不得把它作为第二份样本、覆盖压缩文件或复制进 Git。
+- A6 与 A8 的配方文件 SHA256 相同；A12 与 A14 的配方文件 SHA256 相同，因此这些配方表不能被计作相互独立的配比样本。
+- A1/A3 含 NaN 非有限数值标记，后续运行必须报告保留、剔除或替代规则及其影响；本契约阶段不作质量评分建模。
+- source_manifest.json 的 bytes 与本次 stat 检查一致；本契约以实际文件 SHA256 和字段扫描为准。
