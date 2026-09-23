@@ -15,5 +15,6 @@ git_commit: a8fd1399da10012edb28a6746f2619bc8e562543
 needs_human_review: true
 status: REVIEW # TRIAL | REVIEW | ACCEPTED | REJECTED
 reviewer: A
+pr: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/3"
 failure_or_limitations: "A1/A3 含 NaN 非有限值；A2/A3 不是独立来源真值；上游许可条款未在本地 source_manifest.json 中登记。"
 next_action: "Reviewer A 复核任务卡、数据契约和交接记录；通过后更新为 ACCEPTED。"

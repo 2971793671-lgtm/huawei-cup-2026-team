@@ -6,6 +6,7 @@ owner: B
 reviewer: A
 priority: P1
 issue: ""
+pr: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/3"
 branch: "feature/B/T-Q1-001"
 prompt:
   prompt_id: P-EXP-001
@@ -37,4 +38,4 @@ definition_of_done:
   - "run_id 已加入 experiments/index.csv"
   - "Prompt Run、AI 使用记录和交接单已建立"
   - "等待 Reviewer A 复核后再标记 ACCEPTED"
-notes: "当前未绑定 GitHub Issue；本任务处于 REVIEW，审阅完成后补录 Issue/PR。"
+notes: "已绑定 GitHub PR #3；本任务处于 REVIEW，等待 Reviewer A 复核后再标记 ACCEPTED。"
