@@ -5,7 +5,7 @@
 ## 单一事实源
 
 - GitHub 仓库：[xiaoyuankele/huawei-cup-2026-team](https://github.com/xiaoyuankele/huawei-cup-2026-team)：代码、配置、LaTeX 论文源文件、文档和实验元数据。
-- `data/manifests/`：数据来源、版本、SHA256 和处理关系；原始数据本身不进入 Git。
+- `data/manifests/`：数据来源、版本、SHA256 和处理关系；`data/origin/` 中的原始数据本身不进入 Git。
 - `experiments/runs/`：每次实验的配置、环境、Git 提交号、数据版本、指标和结论。
 - `paper/final/`：准备提交的最终 PDF 和相关清单。
 - 私密聊天：只用于通知；结论必须回写到仓库。
@@ -31,6 +31,8 @@ git config core.autocrlf false
 ```text
 docs/                  题目简报、计划、决策、会议记录、风险
 data/manifests/        数据清单和校验信息
+data/origin/           本地原始数据目录（被 Git 忽略）
+problem/               本地题目原文件目录（被 Git 忽略）
 src/                   正式数据处理、模型和评估代码
 scripts/               可重复运行的脚本
 configs/               实验配置

@@ -19,6 +19,8 @@ data/raw/*
 data/interim/*
 data/processed/*
 data/cache/*
+data/origin/*
+!data/origin/README.md
 models/*.pt
 models/*.pth
 models/*.onnx
@@ -69,3 +71,7 @@ Thumbs.db
 
 # Temporary release files
 deliverables/staging/
+
+# Local problem files may contain unreleased or modified source material
+problem/*
+!problem/README.md
