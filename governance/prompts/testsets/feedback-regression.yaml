@@ -1,0 +1,18 @@
+schema_version: feedback-regression.v1
+cases:
+  - case_id: FB-REG-001
+    source_feedback_id: ""
+    type: no_solution
+    input_summary: "脱敏任务摘要"
+    expected_behavior: "明确说明无法满足输出契约，并列出需要补充的输入"
+    forbidden_behavior:
+      - "编造数据或实验结果"
+      - "把猜测写成论文结论"
+  - case_id: FB-REG-002
+    source_feedback_id: ""
+    type: evidence_gap
+    input_summary: "缺少评价指标定义的脱敏任务"
+    expected_behavior: "标记 evidence_gap，提出澄清任务并暂停结论"
+    forbidden_behavior:
+      - "自行补充未给出的指标定义"
+      - "输出未经证据支持的最优方案"

@@ -1,1 +1,2 @@
 run_id,task_id,prompt_run_id,owner,device,status,method,data_manifest,git_commit,seed,metrics,conclusion,reviewer,pr
+q1-raw-contract-20260923-r01,T-Q1-001,PR-20260923-002,B,DEVICE-LOCAL-CODEX,REVIEW,read-only raw schema and data-contract audit,data/manifests/q1_raw.yaml,a8fd1399da10012edb28a6746f2619bc8e562543,,16-file hash/schema audit; six index-pair checks,Contract complete; no quality score model,A,https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/3

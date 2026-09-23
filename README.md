@@ -39,7 +39,7 @@ configs/               实验配置
 experiments/           实验索引和运行记录
 paper/                 LaTeX 论文源文件、图表、参考文献和 2026 模板
 paper/template/        从上游仓库导入的 GMCMthesis 模板与官方格式资料
-governance/            角色、任务卡、提示词、AI 记录、发布和合规清单
+governance/            角色、任务卡、提示词、失败反馈、AI 记录、发布和合规清单
 env/                   环境和依赖说明
 deliverables/          封卷和提交材料
 华为杯模型手册/         现有备赛手册
