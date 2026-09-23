@@ -16,6 +16,7 @@
 
 ```text
 任务卡 → Prompt Registry → Prompt Run → 实现/实验 → run_id → PR 审阅 → main
+                         └→ Feedback Case → 修复/重试/不确定性结论
                                                    └→ 图表/LaTeX → claim-ledger
 ```
 

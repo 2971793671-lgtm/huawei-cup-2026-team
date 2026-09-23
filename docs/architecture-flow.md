@@ -16,6 +16,7 @@ flowchart TB
         PROMPT[Prompt Registry<br/>prompt_id@version]
         PRUN[Prompt Run<br/>设备 / 模型 / 输出哈希]
         REVIEW[Prompt Review<br/>评测 / 回滚]
+        FEEDBACK[Feedback Case<br/>失败 / 阻塞 / 不确定性]
         DECISION[决策日志]
         AI[AI 使用摘要日志]
         HANDOFF[跨设备 Handoff]
@@ -64,6 +65,8 @@ flowchart TB
     TASK --> PROMPT
     PROMPT --> PRUN
     PRUN --> REVIEW
+    PRUN --> FEEDBACK
+    FEEDBACK --> REVIEW
     REVIEW --> BRANCH
     TASK --> HANDOFF
     HANDOFF --> BRANCH
@@ -107,7 +110,7 @@ flowchart TB
     classDef paper fill:#ffe8ee,stroke:#c53030,color:#4a1010;
     classDef submit fill:#e6fffa,stroke:#25855a,color:#123c32;
     class A,B,C person;
-    class ISSUE,TASK,PROMPT,PRUN,REVIEW,DECISION,AI,HANDOFF,RISK control;
+    class ISSUE,TASK,PROMPT,PRUN,REVIEW,FEEDBACK,DECISION,AI,HANDOFF,RISK control;
     class MAIN,BRANCH,PR,RELEASE repo;
     class PROBLEM,BRIEF,RAW,MANIFEST,PIPELINE,CLEAN,CONFIG,RUN,METRIC data;
     class FIG,SECTIONS,MAIN_TEX,XELATEX,PDF paper;

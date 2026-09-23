@@ -24,6 +24,7 @@ paper: revise sensitivity analysis section
 - 每个任务必须有 `task_id`、Owner、Reviewer、分支、提示词版本和验收条件，模板见 `governance/task-card-template.yml`。
 - 跨设备交接使用 `governance/handoff-template.md`；提示词调用使用 `prompt_id@version` 和 `prompt_run_id`。
 - AI 生成内容必须由 Owner 测试和人工复核，论文只引用已接受的 `run_id`。
+- 无解、失败、阻塞和证据不足的问题必须登记 `feedback_id`；P0/P1 反馈未关闭前不得合并相关 PR。
 
 ## 任务流程
 

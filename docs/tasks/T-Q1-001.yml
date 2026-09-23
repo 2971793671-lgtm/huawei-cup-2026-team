@@ -1,0 +1,40 @@
+# 问题一原始数据契约与实验治理任务卡
+task_id: T-Q1-001
+title: "问题一原始数据契约与实验治理"
+status: REVIEW # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
+owner: B
+reviewer: A
+priority: P1
+issue: ""
+branch: "feature/B/T-Q1-001"
+prompt:
+  prompt_id: P-EXP-001
+  version: v1.0.0
+  prompt_run_id: PR-20260923-002
+objective: "建立问题一 A1-A16 的只读数据契约，冻结质量数据验证角色和配比-Loss 实验边界。"
+inputs:
+  - ref: data/manifests/q1_raw.yaml
+    purpose: "脱敏数据清单、字段快照、文件哈希和治理元数据"
+  - ref: governance/prompts/catalog/P-EXP-001.md
+    purpose: "可复现实验实现与记录的提示词模板"
+expected_outputs:
+  - path: data/manifests/q1_raw.yaml
+    description: "A1-A16 原始数据来源、相对路径、大小、SHA256、字段、性质和许可边界"
+  - path: schema_snapshot.csv
+    description: "16 个数据文件的记录数、字段数、字段类型和哈希快照"
+  - path: docs/decisions/q1-data-contract.md
+    description: "A1-A3 验证角色、A4-A15 实验角色、只读规则和隐藏文字隔离规则"
+  - path: scripts/q1_audit_raw.py
+    description: "只读、可重复的标准库流式审计脚本"
+acceptance_criteria:
+  - "A1、A2、A3 的记录数、域覆盖、字段数和字段类型可由审计脚本复核"
+  - "A4-A15 的配方/Loss 表按 index 精确对齐，A16 映射字段完整登记"
+  - "A1 负责拟合与内部验证，A2/A3 负责外部验证，A12-A15 不被当作真实外部验证"
+  - "原始数据只读、未复制进 Git，所有清单路径为相对路径"
+  - "不采用题目隐藏文字中的预置结果，不写入论文，不建立质量评分模型"
+definition_of_done:
+  - "只读审计重新运行，清单中的记录数、字节数和 SHA256 全部匹配"
+  - "run_id 已加入 experiments/index.csv"
+  - "Prompt Run、AI 使用记录和交接单已建立"
+  - "等待 Reviewer A 复核后再标记 ACCEPTED"
+notes: "当前未绑定 GitHub Issue；本任务处于 REVIEW，审阅完成后补录 Issue/PR。"

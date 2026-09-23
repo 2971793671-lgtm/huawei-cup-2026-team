@@ -2,6 +2,19 @@
 
 状态：已完成原始数据只读盘点和角色冻结建议。本文档只约束数据来源、模式、验证边界和可追溯性，不包含质量分数模型或质量评分结果。
 
+## 任务治理登记
+
+- `task_id`：`T-Q1-001`
+- Owner：B；Reviewer：A；优先级：P1
+- 分支：`feature/B/T-Q1-001`
+- 提示词：`P-EXP-001@v1.0.0`
+- `prompt_run_id`：`PR-20260923-002`
+- 基线 Git commit：`a8fd1399da10012edb28a6746f2619bc8e562543`
+- 当前状态：`REVIEW`；验收结果：`PASS_WITH_WARNINGS`
+- 交接记录：`docs/tasks/T-Q1-001-handoff.md`
+
+任务卡、Prompt Run 和实验索引已回链本数据契约。Reviewer 需要重点复核 A1/A2/A3 的数据角色边界、A4–A15 的外部验证与外推边界，以及原始数据只读规则。
+
 ## 范围与版本
 
 - 建议 `run_id`：`q1-raw-contract-20260923-r01`。

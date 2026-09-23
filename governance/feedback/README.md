@@ -1,0 +1,65 @@
+# 失败、阻塞与不确定性反馈
+
+失败的 AI 输出、不可复现实验、数据矛盾、证据不足和暂时无法解决的问题都是科研过程的一部分。它们使用 `feedback_id` 单独记录，不通过删除聊天或覆盖旧结论来处理。
+
+## 公开边界
+
+本仓库是公开仓库。公开案例只能包含脱敏摘要、错误类型、状态、必要的输入引用和哈希。完整 AI 对话、未公开题目、原始数据片段、账号信息和内部上下文放在本地加密目录，例如 `local/ai-transcripts/`；`local/` 已加入 `.gitignore`，只保留说明文件。
+
+高敏感案例只在公开索引中保留 `private_ref` 或 `transcript_sha256`，不在 GitHub Issue 或 PR 评论中展开。
+
+## 类型与状态
+
+反馈类型使用固定值：
+
+- `no_solution`：没有生成满足输出契约的方案；
+- `execution_failure`：代码、命令、环境或资源失败；
+- `quality_failure`：输出违反格式、接口或验收要求；
+- `evidence_gap`：资料不足，不能支持结论；
+- `contradiction`：同一上下文出现互相冲突的结果；
+- `security_privacy`：发现泄露、提示注入或越权风险；
+- `human_disagreement`：队员无法认可输出或解释。
+
+状态流程为：
+
+```text
+captured → triaged → reproducing
+                    ├→ resolved
+                    ├→ needs_input
+                    ├→ accepted_uncertainty
+                    └→ escalated
+                         ↓
+                       closed
+```
+
+`duplicate` 和 `superseded` 是旁支终态。每次状态变化都应写入案例的 `events`，包括时间、操作者、原因和证据引用。
+
+## “无解”的判定
+
+`UNKNOWN` 或 `accepted_uncertainty` 表示证据不足，不能写成“问题无解”。只有在理论约束下确实不可行，或至少两种独立方案在固定协议下均失败，并由 A 审核后，才可以使用 `not_feasible`。
+
+`wont_fix` 表示项目决定停止投入，原因可能是范围、时间或成本；它不等于数学上的不可行。
+
+## 严重等级与处理
+
+| 等级 | 例子 | 处理 |
+|---|---|---|
+| P0 | 泄露、关键结论错误、污染最终 PDF | 立即暂停相关实验和合并，由 A 处理 |
+| P1 | 数据契约、指标、核心代码或实验设计错误 | 阻塞 PR，修复并重跑 |
+| P2 | 局部质量或解释问题 | 下一迭代修复 |
+| P3 | 格式、措辞和非关键改进 | 可批量处理 |
+
+P0/P1 的公开记录可以只保留脱敏 stub，详细材料放私有记录。`accepted_uncertainty` 关闭时，必须写清楚“目前不能声称什么”和需要什么证据。
+
+## 与现有对象的关系
+
+- `task_id` 表示要完成的工作；
+- `prompt_run_id` 表示一次 AI 调用；
+- `run_id` 表示真实代码或数据实验；
+- `feedback_id` 表示对输出、实验或证据的反馈案例。
+
+一个任务可以有多个提示词调用和实验，一个反馈案例可以关联多个重试 `run_id`。反馈记录不能替代实验的配置、数据 manifest、Git commit、环境和指标。
+
+## 关闭条件
+
+关闭案例时必须记录：处理决定、修复的 prompt 或代码版本、复现命令、证据引用、Reviewer 和后续动作。已关闭的 `no_solution`、`quality_failure` 和 `contradiction` 应加入提示词回归测试集；`evidence_gap` 和 `accepted_uncertainty` 必须阻止未经证据的论文表述。
