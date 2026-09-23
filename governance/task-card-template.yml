@@ -1,0 +1,33 @@
+# 复制本文件到 docs/tasks/T-<编号>.yml 后填写
+task_id: T-Q1-001
+title: "明确任务名称"
+status: READY # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
+owner: B
+reviewer: A
+priority: P1 # P0 | P1 | P2
+issue: "https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/"
+branch: "feature/B/T-Q1-001"
+prompt:
+  prompt_id: P-EXP-001
+  version: v1.0.0
+  prompt_run_id: ""
+objective: "用一句话描述要解决的问题"
+inputs:
+  - ref: data/manifests/example.yaml
+    purpose: "输入数据或前置结果"
+expected_outputs:
+  - path: src/
+    description: "实现文件"
+  - path: experiments/runs/<run_id>/
+    description: "可复现实验记录"
+acceptance_criteria:
+  - "命令可以在干净环境中运行"
+  - "固定 seed 并记录环境"
+  - "指标、日志和失败原因完整"
+  - "不存在数据泄漏"
+definition_of_done:
+  - "代码已格式化并完成必要测试"
+  - "run_id 已加入 experiments/index.csv"
+  - "交接单已填写"
+  - "PR 已由非 Owner 审核"
+notes: "限制、待确认事项和下一步"

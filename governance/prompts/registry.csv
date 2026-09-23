@@ -1,0 +1,5 @@
+prompt_id,title,domain,version,status,owner,reviewer,template_path,linked_tasks,notes
+P-MODEL-001,模型规格与算法拆解,model,v1.0.0,draft,A,B,governance/prompts/catalog/P-MODEL-001.md,,
+P-EXP-001,可复现实验实现与记录,experiment,v1.0.0,draft,B,A,governance/prompts/catalog/P-EXP-001.md,,
+P-PAPER-001,结果分析与LaTeX段落,paper,v1.0.0,draft,C,A,governance/prompts/catalog/P-PAPER-001.md,,
+P-FIG-001,论文图表生成与审查,figure,v1.0.0,draft,C,B,governance/prompts/catalog/P-FIG-001.md,,

@@ -1,1 +1,1 @@
-date,tool,version,provider,user,purpose,input_summary,output_used,human_reviewer,source_or_note
+date,prompt_id,prompt_version,prompt_run_id,task_id,tool,model,provider,user,device_id,purpose,input_summary,output_ref,output_sha256,git_commit,needs_human_review,status,human_reviewer,source_or_note

@@ -4,11 +4,22 @@
 
 | 角色 | Owner 范围 | 主要 Reviewer |
 |---|---|---|
-| A 队长/建模架构 | 题目简报、假设、模型方案、里程碑、最终提交 | B 或 C |
-| B 数据/计算 | 数据清洗、算法、批量实验、环境、复现脚本 | A 或 C |
-| C 论文/可视化 | LaTeX 章节、图表、引用、格式、封卷检查 | A 或 B |
+| A 架构与算法负责人 | 题目拆解、数据角色、模型假设、接口、评价协议、最终技术结论 | B 或 C |
+| B 实现与实验负责人 | 数据处理、基线、批量实验、环境和复现脚本 | A 或 C |
+| C 实现、论文与图表负责人 | 模型实现协作、结果分析、LaTeX 章节、图表、引用和封卷 | A 或 B |
 
-每项成果必须有 Owner 和 Reviewer。三人每日同步一次，重大决策写入 `docs/decisions/`。
+每项成果必须有 Owner 和 Reviewer。P0 模型、评价指标和论文结论必须由 A 审核；P1/P2 内容由队友交叉审核。三人每日同步一次，重大决策写入 `docs/decisions/`。详细矩阵见 [governance/roles-and-raci.md](../governance/roles-and-raci.md)。
+
+## 任务、提示词与交接
+
+研究想法先写成任务卡，再分配给 B 或 C。任务卡绑定 Issue、分支、输入引用、`prompt_id@version` 和验收条件。队友可以使用各自设备上的 AI，但每次实际调用生成 `prompt_run_id`，并记录设备、模型、Git commit、输出引用和人工复核状态。跨设备交接使用 [handoff-template.md](../governance/handoff-template.md)。
+
+```text
+任务卡 → Prompt Registry → Prompt Run → 实现/实验 → run_id → PR 审阅 → main
+                                                   └→ 图表/LaTeX → claim-ledger
+```
+
+公开仓库只保存脱敏的提示词模板、元数据和哈希；完整题目、原始数据和未公开 AI 对话保存在本地受控目录。
 
 ## 分层工具
 

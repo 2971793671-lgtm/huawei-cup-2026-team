@@ -1,1 +1,1 @@
-run_id,owner,device,status,method,data_manifest,git_commit,seed,metrics,conclusion
+run_id,task_id,prompt_run_id,owner,device,status,method,data_manifest,git_commit,seed,metrics,conclusion,reviewer,pr

@@ -5,8 +5,8 @@
 ## 单一事实源
 
 - GitHub 仓库：[xiaoyuankele/huawei-cup-2026-team](https://github.com/xiaoyuankele/huawei-cup-2026-team)：代码、配置、LaTeX 论文源文件、文档和实验元数据。
-- `data/manifests/`：数据来源、版本、SHA256 和处理关系；原始数据本身不进入 Git。
-- `experiments/runs/`：每次实验的配置、环境、Git 提交号、数据版本、指标和结论。
+- `data/manifests/`：数据来源、版本、SHA256 和处理关系；`data/origin/` 中的原始数据本身不进入 Git。
+- `experiments/runs/`：每次实验的配置、环境、Git 提交号、数据版本、指标和结论；`experiments/index.csv` 关联任务和提示词调用。
 - `paper/final/`：准备提交的最终 PDF 和相关清单。
 - 私密聊天：只用于通知；结论必须回写到仓库。
 
@@ -31,13 +31,15 @@ git config core.autocrlf false
 ```text
 docs/                  题目简报、计划、决策、会议记录、风险
 data/manifests/        数据清单和校验信息
+data/origin/           本地原始数据目录（被 Git 忽略）
+problem/               本地题目原文件目录（被 Git 忽略）
 src/                   正式数据处理、模型和评估代码
 scripts/               可重复运行的脚本
 configs/               实验配置
 experiments/           实验索引和运行记录
 paper/                 LaTeX 论文源文件、图表、参考文献和 2026 模板
 paper/template/        从上游仓库导入的 GMCMthesis 模板与官方格式资料
-governance/            AI 记录、发布和合规清单
+governance/            角色、任务卡、提示词、AI 记录、发布和合规清单
 env/                   环境和依赖说明
 deliverables/          封卷和提交材料
 华为杯模型手册/         现有备赛手册
@@ -45,6 +47,6 @@ deliverables/          封卷和提交材料
 
 ## 协作入口
 
-先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)、[docs/architecture.md](docs/architecture.md)、[全流程架构图](docs/architecture-flow.md)、[paper/README.md](paper/README.md) 和 [governance/release-checklist.md](governance/release-checklist.md)。
+先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)、[docs/architecture.md](docs/architecture.md)、[全流程架构图](docs/architecture-flow.md)、[governance/roles-and-raci.md](governance/roles-and-raci.md)、[governance/prompts/README.md](governance/prompts/README.md)、[paper/README.md](paper/README.md) 和 [governance/release-checklist.md](governance/release-checklist.md)。
 
 论文模板来源和本项目的路径适配记录见 [paper/TEMPLATE-SOURCE.md](paper/TEMPLATE-SOURCE.md)。
