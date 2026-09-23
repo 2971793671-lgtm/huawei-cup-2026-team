@@ -46,6 +46,21 @@ paper/*.xdv
 paper/final/*
 !paper/final/README.md
 
+# Imported template build products (the checked-in example PDFs remain tracked)
+paper/template/*.aux
+paper/template/*.bbl
+paper/template/*.bcf
+paper/template/*.blg
+paper/template/*.fdb_latexmk
+paper/template/*.fls
+paper/template/*.lof
+paper/template/*.log
+paper/template/*.lot
+paper/template/*.out
+paper/template/*.run.xml
+paper/template/*.synctex.gz
+paper/template/*.toc
+
 # Local IDE and OS files
 .idea/
 .vscode/settings.json

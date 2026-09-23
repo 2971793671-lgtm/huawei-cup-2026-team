@@ -14,7 +14,7 @@
 
 ### Level 0：必须有
 
-私有 Git、统一目录、分支规则、数据 manifest、实验索引、LaTeX 单主入口。
+公开 GitHub 仓库、统一目录、分支规则、数据 manifest、实验索引、LaTeX 单主入口和公开仓库安全边界。公开仓库只存放可公开内容；原始数据、密钥、账号信息和未公开题目不得提交。
 
 ### Level 1：推荐
 
@@ -26,4 +26,15 @@ DVC 或 Git LFS、锁定 Python/TeX 环境、自动编译脚本、Issue 和 Pull
 
 ## 单一事实源
 
-聊天只传通知，不能作为最终版本；论文中的数字必须能由 `run_id` 追溯到 Git commit、数据 manifest 和运行环境；最终 PDF 必须从仓库源文件生成。
+聊天只传通知，不能作为最终版本；论文中的数字必须能由 `run_id` 追溯到 Git commit、数据 manifest 和运行环境；最终 PDF 必须从仓库源文件生成。论文模板固定放在 `paper/template/`，`paper/main.tex` 是唯一项目入口，模板更新必须记录上游提交号和本地适配范围。
+
+## 论文模板层
+
+`paper/template/` 是从 [Nopon-Knowledge/huawei-cup-modeling-latex](https://github.com/Nopon-Knowledge/huawei-cup-modeling-latex) 导入的模板供应层，包含类文件、固定版式素材、官方格式核对文件和维护脚本。项目内容层由 `paper/main.tex`、`paper/sections/`、`paper/commands.tex` 和 `paper/refs.bib` 组成。模板供应层可以独立更新，内容层不得直接修改上游示例来写论文。
+
+论文生产链固定为：
+
+```text
+题目/数据 manifest → 实验 run_id → 图表与结论 → paper/sections/
+→ paper/main.tex + paper/template/ → XeLaTeX → paper/final/submission-draft.pdf
+```
