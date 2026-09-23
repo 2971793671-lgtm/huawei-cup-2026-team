@@ -17,7 +17,7 @@ flowchart TB
         RISK[风险登记]
     end
 
-    subgraph GIT[私有 Git 仓库]
+    subgraph GIT[公开 GitHub 仓库]
         MAIN[main 稳定集成]
         BRANCH[任务分支<br/>data / model / exp / paper / docs]
         PR[Pull Request + 队友审阅]
@@ -39,7 +39,8 @@ flowchart TB
     subgraph PAPER[论文生产链路]
         FIG[图表生成脚本]
         SECTIONS[LaTeX 章节<br/>paper/sections]
-        MAIN_TEX[main.tex + refs.bib]
+        MAIN_TEX[main.tex + sections/ + refs.bib]
+        TEMPLATE[paper/template<br/>2026 GMCMthesis 模板]
         XELATEX[XeLaTeX 编译]
         PDF[最终 PDF]
     end
@@ -74,6 +75,7 @@ flowchart TB
     METRIC --> SECTIONS
     FIG --> MAIN_TEX
     SECTIONS --> MAIN_TEX
+    TEMPLATE --> MAIN_TEX
     MAIN_TEX --> XELATEX
     XELATEX --> PDF
 
@@ -107,4 +109,4 @@ flowchart TB
 
 ## 阅读顺序
 
-先看蓝色的三人入口和绿色的 Git 集成，再看紫色的数据实验链路，接着看粉色的 LaTeX 论文链路，最后看青色的封卷提交链路。虚线表示治理、备份和大文件存储关系，不是主处理顺序。
+先看蓝色的三人入口和绿色的 Git 集成，再看紫色的数据实验链路，接着看粉色的 LaTeX 论文链路，最后看青色的封卷提交链路。公开仓库中的文件必须经过公开性检查；原始数据和敏感配置不进入 Git。虚线表示治理、备份和大文件存储关系，不是主处理顺序。
