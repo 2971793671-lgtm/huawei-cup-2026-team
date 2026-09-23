@@ -11,6 +11,8 @@
 - `template/`：上游模板、固定版式素材、官方格式核对资料和维护脚本。
 - `official-template-checklist.md`：提交前的格式、匿名和材料核对表。
 
+文献检索、阅读笔记和版权边界见 [docs/literature/README.md](../docs/literature/README.md)。
+
 ## 编译
 
 从仓库根目录运行：
