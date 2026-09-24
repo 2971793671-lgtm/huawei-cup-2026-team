@@ -11,8 +11,10 @@ assignees: ""
 - Feedback ID：`FB-YYYYMMDD-DOMAIN-000`
 - 类型：no_solution / execution_failure / quality_failure / evidence_gap / contradiction / security_privacy / human_disagreement
 - 严重等级：P0 / P1 / P2 / P3
-- Owner Role / Actor：
-- Reviewer Role / Actor：
+- Work package：WP-A / WP-B / WP-C / Q1-INT
+- Owner Actor：
+- Peer Reviewer Actor：
+- Release Integrator Actor：
 - 关联 Task ID：
 - Prompt Run ID：
 - Experiment Run ID（如有）：

@@ -1,49 +1,42 @@
-# 角色与执行人解耦协议
+# 角色与执行人解耦协议 v2
 
-## 目的
+角色描述工作阶段或复核视角，Actor 描述真实执行人。当前任务卡不再使用固定的 A/B/C Owner 或“全部由 A 最终签字”模式。每个任务必须记录实际的 `owner_actor`、`peer_reviewer_actor` 和 `release_integrator_actor`。
 
-角色描述职权或任务所需的复核视角，Actor 描述真实执行人。一个人可以承担多个角色，但更换角色名称不能制造独立审核。所有 Owner/Reviewer 判断都必须同时记录 `*_role` 和 `*_actor`；`*_role` 是责任/复核视角，`*_actor` 才是实际执行人和独立性判断依据。
+## 当前三人工作包
 
-## 当前三人配置
-
-| Actor | 当前承担角色 | 主要职责 | 独立性规则 |
+| Actor | 纵向工作包 | 代码—实验—论文闭环 | 交叉职责 |
 |---|---|---|---|
-| `ACTOR-1` | A+B | WP-A 数据代码、预处理实验、数据方法论文段；最终技术签署 | 不得审核自己作为 Owner 的任务；A 签署必须在独立复核后进行 |
-| `ACTOR-2` | B-support / A-interface | WP-B 模型代码、基线/PP-GA 实验、模型论文段；复核 WP-A/WP-C | 不得审核自己作为 Owner 的任务 |
-| `ACTOR-3` | C / analysis | WP-C 冲突、验证、图表代码，稳健性实验和结果论文段；复核 WP-B | 不得审核自己作为 Owner 的任务 |
+| ACTOR-1 | WP-A 数据与证据 | 审计/预处理代码；数据边界与归一化实验；数据方法段 | 复核 WP-C，集成 WP-B，参与发布签署 |
+| ACTOR-2 | WP-B 模型与优化 | 评分接口/基线/PP-GA 代码；分层模型实验；模型协议段 | 复核 WP-A，集成 WP-C，参与发布签署 |
+| ACTOR-3 | WP-C 验证与结果 | 冲突/验证/图表代码；稳健性与域分层实验；结果限制段 | 复核 WP-B，集成 WP-A，参与发布签署 |
 
-真实姓名或 GitHub 用户名只写入受控任务分配记录；公开任务卡默认使用上述稳定 Actor ID。
+真实姓名或 GitHub 用户名只写入受控分配记录；公开仓库使用稳定 Actor ID。
 
-## 审核规则
+## 约束
 
-1. `owner_actor` 与 `reviewer_actor` 必须不同。不同角色但相同 Actor 仍属于自审，任务不能进入 `ACCEPTED`。
-2. P0/P1 任务必须有一名独立 Peer Reviewer；Peer Reviewer 的意见和 `feedback_id` 必须写入 handoff 或 PR。
-3. A 的最终技术签署由 `final_authority_actor` 完成。若 A 同时是 Owner，必须先有其他 Actor 的独立 Peer Review，再单独记录 A 的最终决定。
-4. Reviewer 负责发现问题，不得替 Owner 修改结果；Owner 负责修订并保留旧运行记录。
-5. 没有独立 Reviewer 时，任务状态只能是 `REVIEW_BLOCKED`，不能进入 `ACCEPTED`，也不能解锁下游任务。
-6. AI 对话可以由任意 Actor 使用，但 Prompt Run、设备、分支、commit、输出哈希和人工审核人必须回写仓库。
+1. `owner_actor`、`peer_reviewer_actor`、`release_integrator_actor` 必须互不相同。
+2. Peer Reviewer 必须独立检查，不得直接修改 Owner 的结果；发现问题必须建立 `feedback_id`。
+3. Integrator 检查接口、manifest、run_id、claim ledger 和限制是否齐全，不代替 Peer Review。
+4. 缺少 Peer Review 时只能是 `REVIEW_BLOCKED`；缺少 Integrator 检查时不能是 `PACKAGE_ACCEPTED`。
+5. 三人各自的工作包必须同时交付代码、实验和论文段；缺少任何一类只能是 `PARTIAL`。
+6. Q1-INT/T-Q1-009 的发布决定需要三人 Release Council 共同签署；ACTOR-1 的协调身份不能替代其他两人的签署。
+7. 任务状态必须由 Task Card、PR、Run Manifest 和 Claim Ledger 共同支撑，不能只凭聊天记录更新。
 
-## Q1 推荐分配
+## 环形分配
 
-| Task | Owner Actor | Reviewer Actor | Final authority |
-|---|---|---|---|
-| T-Q1-001 | ACTOR-1 | ACTOR-2 | ACTOR-1（A） |
-| T-Q1-002 | ACTOR-1 | ACTOR-2 | ACTOR-1（A） |
-| T-Q1-003 | ACTOR-2 | ACTOR-3 | ACTOR-1（A） |
-| T-Q1-004 | ACTOR-2 | ACTOR-3 | ACTOR-1（A） |
-| T-Q1-005 | ACTOR-3 | ACTOR-2 | ACTOR-1（A） |
-| T-Q1-006 | ACTOR-3 | ACTOR-2 | ACTOR-1（A） |
-| T-Q1-007 | ACTOR-3 | ACTOR-2 | ACTOR-1（A） |
-| T-Q1-008 | ACTOR-3 | ACTOR-2 | ACTOR-1（A） |
-
-## 纵向工作包
-
-每个工作包都必须交付三类内容：可运行代码、带 `run_id` 的实验记录、可回链的论文草稿或结果表。任务卡仍按 T-Q1 编号追踪，工作包负责把同一责任人的代码、实验和论文输出绑定起来。
-
-| 工作包 | Owner Actor | 任务范围 | 独立 Reviewer | 论文交付 |
+| 工作包 | Owner Actor | Peer Reviewer | Release Integrator | 允许正式实验的门 |
 |---|---|---|---|---|
-| WP-A | ACTOR-1 | T-Q1-001、T-Q1-002 | ACTOR-2 | 数据角色、预处理、泄漏和限制段 |
-| WP-B | ACTOR-2 | T-Q1-003、T-Q1-004 | ACTOR-3 | 模型定义、基线、PP-GA 和评价协议段 |
-| WP-C | ACTOR-3 | T-Q1-005、T-Q1-006、T-Q1-007、T-Q1-008 | ACTOR-2 | 冲突、验证、图表、结果和限制段 |
+| WP-A | ACTOR-1 | ACTOR-2 | ACTOR-3 | G0 |
+| WP-B | ACTOR-2 | ACTOR-3 | ACTOR-1 | G1 |
+| WP-C | ACTOR-3 | ACTOR-1 | ACTOR-2 | G2 |
+| Q1-INT | ACTOR-1（协调） | 三人共同 | 三人共同 | G3 |
 
-这套分配保留 A 的最终技术责任，同时让三个人都拥有完整的代码—实验—论文闭环；任何人都不能通过角色切换给自己的结果盖章。
+## 状态机
+
+```text
+DRAFT → SPEC_READY → CODE_READY → RUNNING → RUN_COMPLETE
+      → PEER_REVIEW → PACKAGE_ACCEPTED → INTEGRATED
+                         └→ REWORK / REVIEW_BLOCKED
+```
+
+角色视角可以写入可选字段 `review_domain`，但不能覆盖 Actor 独立性判断。分支使用 `wp/<actor>/<work-package>`，跨包整合使用 `integration/<actor>/Q1-INT`。
