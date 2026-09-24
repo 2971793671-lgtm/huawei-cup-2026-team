@@ -1,0 +1,62 @@
+# 问题一质量数据预处理与泄漏审计任务卡
+task_id: T-Q1-002
+title: "问题一质量数据预处理与泄漏审计"
+status: REVIEW # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
+owner: B
+reviewer: A
+priority: P1
+issue: ""
+branch: "feature/B/T-Q1-002"
+pr: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/4"
+prompt:
+  prompt_id: P-DATA-001
+  version: v1.0.0
+  prompt_run_id: PR-20260923-003
+objective: "在不修改原始数据且不建立质量评分模型的前提下，为 A1-A3 的 22 个质量字段建立语义、方向和可复用归一化契约，完成 A1 拟合参数冻结、A2/A3 外部验证复用、重叠审计、敏感性比较和域漂移审计。"
+inputs:
+  - ref: data/manifests/q1_raw.yaml
+    purpose: "A1-A16 原始数据路径、哈希、字段和现有角色边界；当前 T-Q1-001 仍为 REVIEW，只作临时基线引用"
+  - ref: docs/decisions/q1-data-contract.md
+    purpose: "原始只读、A1/A2/A3 角色、NaN 和隐藏文字隔离规则"
+  - ref: problem/数据说明_已清除隐藏误导文字.pdf
+    purpose: "质量指标的题目数据说明；仅在受控本地目录读取"
+  - ref: problem/隐藏文字检查报告.md
+    purpose: "识别并隔离题目文件中的隐藏误导内容"
+expected_outputs:
+  - path: indicator_catalog.yaml
+    description: "22 个质量字段的语义、列表压缩、方向、缺失/异常和归一化规范"
+  - path: data/processed/q1_X_norm_v1.csv
+    description: "按 A1 fit 冻结参数生成的 higher-is-better 派生矩阵；待核验方向留空"
+  - path: normalization_stats.json
+    description: "A1 fit 统计、冻结边界、四种方法比较和记录计数"
+  - path: indicator_audit.csv
+    description: "近常数、相关性、域漂移、A2/A3 漂移和方向资格审计"
+  - path: normalization_sensitivity.csv
+    description: "min-max、分位数缩放、秩变换和稳健 z 分数比较"
+  - path: configs/q1-indicator-normalization.yaml
+    description: "冻结输入版本、A1 fit 划分、seed、缺失处理、方向和归一化接口"
+  - path: scripts/q1_indicator_preprocess.py
+    description: "从仓库根目录运行的流式预处理和审计实现，不写回原始目录"
+  - path: data/manifests/q1_preprocessed.yaml
+    description: "派生数据来源、父版本、参数哈希、输出哈希、记录统计和处理脚本"
+  - path: docs/decisions/q1-preprocessing-contract.md
+    description: "特征语义、方向门控、泄漏控制、NaN 和重叠处理决策；当前待 Reviewer A 接受"
+  - path: experiments/runs/<run_id>/
+    description: "配置、命令、commit、环境、指标、日志和结论；仅保存允许公开的元数据"
+  - path: docs/tasks/T-Q1-002-handoff.md
+    description: "按 handoff 模板填写的跨设备复核记录"
+acceptance_criteria:
+  - "原始 A1-A3 的字节数和 SHA256 在运行前后保持一致，原始目录没有写入、覆盖、解压副本或重命名"
+  - "A1、A2、A3 的记录均有处理状态；缺失、非有限值、解析异常、重复 ID 和排除原因有可复核清单，不静默丢行"
+  - "A1 与 A2/A3 的 ID 重叠被显式标记并分层报告；A2/A3 不被描述为独立来源真值"
+  - "A1 fit 分区之外不估计缺失填补、变换、方向、特征选择或阈值参数；A1 holdout、A2 和 A3 只复用 fit 参数"
+  - "对 A1 holdout、A2、A3 报告相对于 A1 fit 的支持范围/漂移诊断；不得按数据集分别重新拟合标准化参数"
+  - "8 个列表型质量字段先完成语义/类别顺序证据核验；证据不足时保留向量并登记 evidence_gap，不盲目均值或中位数"
+  - "预处理结果不包含质量总分、权重、PP-GA、遗传算法或任何论文结论"
+definition_of_done:
+  - "固定配置下从仓库根目录可以重复运行并生成同样的统计摘要和参数哈希"
+  - "预处理 manifest、配置、环境、命令、run_id 和审计摘要已相互回链"
+  - "Prompt Run、AI 使用记录和 handoff 已建立，needs_human_review=true"
+  - "Reviewer A 完成 P1 数据边界和泄漏审查后，任务才可标记 ACCEPTED"
+run_id: q1-indicator-normalization-20260923-r01
+notes: "本次运行输出 22 个原始字段、25 个派生标量列，其中 16 个方向有证据进入 higher-is-better 矩阵，9 个方向保留 pending_verification 并留空；本任务依赖 T-Q1-001 的原始契约，但不假定其已 ACCEPTED。若 Reviewer 对重叠、方向或字段语义有异议，登记 feedback_id 并暂停下游评分任务。"

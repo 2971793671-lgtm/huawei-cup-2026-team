@@ -1,0 +1,36 @@
+# 问题一论文集成
+task_id: T-Q1-008
+title: "问题一论文段落与主张登记"
+status: DRAFT # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
+owner: C
+reviewer: A
+priority: P0
+issue: ""
+branch: "paper/C/T-Q1-008"
+prompt:
+  prompt_id: P-PAPER-001
+  version: v1.0.0
+  prompt_run_id: ""
+objective: "将已接受的 Q1 数据、模型、冲突和验证证据写入论文，并完成 claim-ledger 回链。"
+inputs:
+  - ref: docs/tasks/T-Q1-006.yml
+    purpose: "已接受验证报告"
+  - ref: docs/tasks/T-Q1-007.yml
+    purpose: "已接受图表和结果表"
+  - ref: paper/claim-ledger.csv
+    purpose: "数字、主张、run_id 和证据链"
+expected_outputs:
+  - path: paper/sections/model.tex
+    description: "Q1 数据预处理和模型方法段落"
+  - path: paper/sections/experiments.tex
+    description: "Q1 实验协议、结果和限制"
+  - path: paper/claim-ledger.csv
+    description: "论文主张与接受 run_id 的回链"
+  - path: paper/final/submission-draft.pdf
+    description: "通过编译和格式检查的草稿（如进入论文阶段）"
+acceptance_criteria:
+  - "论文只引用 ACCEPTED 的 run_id，不把 trial/REVIEW 结果写成最终结论"
+  - "说明同源重叠、半监督/代理质量信号、方向未决和验证限制"
+  - "AI 辅助内容按官方要求和仓库 AI 使用记录披露"
+definition_of_done:
+  - "A 审核技术主张，C 完成 LaTeX 编译和格式检查"

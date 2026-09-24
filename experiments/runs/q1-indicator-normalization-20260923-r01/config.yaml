@@ -1,0 +1,4 @@
+task_id: T-Q1-002
+run_id: q1-indicator-normalization-20260923-r01
+config_ref: configs/q1-indicator-normalization.yaml
+manifest_ref: data/manifests/q1_preprocessed.yaml

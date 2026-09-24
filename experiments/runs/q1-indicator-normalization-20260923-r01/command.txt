@@ -1,0 +1,2 @@
+python -X utf8 scripts/q1_indicator_preprocess.py --root . --config configs/q1-indicator-normalization.yaml
+python -X utf8 scripts/q1_audit_raw.py
