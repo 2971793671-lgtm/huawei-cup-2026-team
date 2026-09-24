@@ -3,10 +3,19 @@
 ```text
 [HANDOFF]
 task_id: T-Q1-001
-owner: B
-reviewer: A
+owner_role: B
+owner_actor: ACTOR-1
+reviewer_role: C
+reviewer_actor: ACTOR-2
+final_authority_role: A
+final_authority_actor: ACTOR-1
+independence_check: PASS
+reviewer_decision: PENDING
+review_feedback_id: NONE
+final_decision: PENDING
 device_id: DEVICE-LOCAL-CODEX
 branch: feature/B/T-Q1-001
+branch_owner_actor: ACTOR-1
 prompt_id: P-EXP-001@v1.0.0
 prompt_run_id: PR-20260923-002
 run_id: q1-raw-contract-20260923-r01
@@ -20,7 +29,7 @@ status: REVIEW
 acceptance_result: PASS_WITH_WARNINGS
 limitations: A1/A3 含 NaN 非有限值；A2/A3 与 A1 同属上游质量信号族；上游许可条款未记录。
 review_request: 复核 A1/A2/A3 的拟合、内部验证和外部验证边界，确认 A4-A15 的外部验证/外推分层及原始数据只读规则。
-next_action: Reviewer A 在 PR #3 完成复核；通过后将任务卡和 Prompt Run 状态更新为 ACCEPTED。
+next_action: ACTOR-2 在 PR #3 完成独立复核；通过后由 ACTOR-1 以 A 身份签署并将任务卡和 Prompt Run 更新为 ACCEPTED。
 [/HANDOFF]
 ```
 

@@ -51,7 +51,7 @@ reviewer: A
 - 原始文件 SHA256 与运行前一致。
 - 任何排除、保留、替代、未决语义和重叠处理都能从汇总表追溯到规则。
 - 输出中不出现质量总分、PP-GA 权重、模型优劣结论或论文措辞。
-- 输出默认 `needs_human_review=true`，等待 Reviewer A 审查后才能供评分模型任务引用。
+- 输出默认 `needs_human_review=true`，须先由任务卡指定的独立 `reviewer_actor` 审查，再由 `final_authority` 以 A 身份签署后才能供评分模型任务引用。
 
 ## 返回格式
 

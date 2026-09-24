@@ -8,6 +8,7 @@
 - 模板使用语义版本：修正文案或格式用 patch，改变输出结构用 minor，改变任务目标或验收含义用 major。
 - 生命周期：`draft → trial → approved → active → deprecated → archived`。
 - 每次真实调用生成唯一 `prompt_run_id`，并回链 `task_id`、设备、分支、Git commit 和输出摘要。
+- 注册表中的 `owner`/`reviewer` 是角色级别的规范责任；具体任务卡必须额外记录 `owner_actor`、`reviewer_actor` 和 `final_authority`。角色切换不构成独立审核。
 
 ## 目录约定
 

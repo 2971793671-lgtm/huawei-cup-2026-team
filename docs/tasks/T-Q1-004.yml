@@ -3,10 +3,21 @@ task_id: T-Q1-004
 title: "问题一基线、PP-GA 与对照模型实现"
 status: DRAFT # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
 owner: B
-reviewer: A
+reviewer: C
+owner_actor: ACTOR-2
+reviewer_actor: ACTOR-3
+final_authority:
+  role: A
+  actor: ACTOR-1
+review:
+  independent_peer_required: true
+  owner_reviewer_must_differ: true
+  same_actor_role_switch_is_not_independent: true
+  no_reviewer_status: REVIEW_BLOCKED
 priority: P0
 issue: ""
 branch: "feature/B/T-Q1-004"
+branch_owner_actor: ACTOR-2
 prompt:
   prompt_id: P-EXP-002
   version: v1.0.0

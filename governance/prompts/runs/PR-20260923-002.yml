@@ -2,7 +2,16 @@ prompt_run_id: PR-20260923-002
 task_id: T-Q1-001
 prompt_id: P-EXP-001
 prompt_version: v1.0.0
-owner: B
+owner_role: B
+owner_actor: ACTOR-1
+reviewer_role: C
+reviewer_actor: ACTOR-2
+final_authority_role: A
+final_authority_actor: ACTOR-1
+independence_check: PASS
+reviewer_decision: PENDING
+review_feedback_id: NONE
+final_decision: PENDING
 device_id: DEVICE-LOCAL-CODEX
 date: 2026-09-23
 tool: Codex desktop
@@ -14,7 +23,6 @@ output_sha256: "data/manifests/q1_raw.yaml=c60550c1c0ebb8d26af7c996d45bae08758b0
 git_commit: a8fd1399da10012edb28a6746f2619bc8e562543
 needs_human_review: true
 status: REVIEW # TRIAL | REVIEW | ACCEPTED | REJECTED
-reviewer: A
 pr: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/3"
 failure_or_limitations: "A1/A3 含 NaN 非有限值；A2/A3 不是独立来源真值；上游许可条款未在本地 source_manifest.json 中登记。"
-next_action: "Reviewer A 复核任务卡、数据契约和交接记录；通过后更新为 ACCEPTED。"
+next_action: "ACTOR-2 独立复核任务卡、数据契约和交接记录；通过后由 ACTOR-1 以 A 身份签署并更新为 ACCEPTED。"

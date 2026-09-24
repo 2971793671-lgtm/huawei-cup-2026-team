@@ -9,8 +9,11 @@ assignees: ""
 ## 基本信息
 
 - Task ID：`T-XXXX-000`
-- Owner：
-- Reviewer：
+- Work package：WP-A / WP-B / WP-C
+- Owner Role / Actor：
+- Reviewer Role / Actor：
+- Final Authority Role / Actor：
+- Independence Check：PASS / FAIL / REVIEW_BLOCKED
 - 优先级：P0 / P1 / P2
 - 分支：
 - Prompt：`P-XXX-000@vX.Y.Z`
@@ -29,6 +32,7 @@ assignees: ""
 - [ ] 代码或脚本：
 - [ ] 配置和运行命令：
 - [ ] 实验 `run_id` 或文档：
+- [ ] 论文草稿、主张登记或结果说明：
 - [ ] 图表、表格或 LaTeX 修改（如适用）：
 
 ## 验收条件
