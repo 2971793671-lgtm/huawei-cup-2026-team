@@ -13,9 +13,11 @@ run_id: null
 related_run_ids: []
 issue: null
 pr: null
-branch: feature/B/T-Q1-001
-owner: B
-reviewer: A
+work_package: WP-A
+branch: wp/ACTOR-1/WP-A
+owner_actor: ACTOR-1
+peer_reviewer_actor: ACTOR-2
+release_integrator_actor: ACTOR-3
 device_id: DEVICE-B-01
 model:
   provider: ""
