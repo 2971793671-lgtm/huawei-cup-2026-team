@@ -16,7 +16,7 @@ review:
   integrator_must_differ: true
   no_reviewer_status: REVIEW_BLOCKED
 priority: P1
-issue: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/4"
+issue: "https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/8"
 branch: "feature/B/T-Q1-002"
 branch_owner_actor: ACTOR-1
 gate: G0

@@ -16,7 +16,7 @@ review:
   integrator_must_differ: true
   no_reviewer_status: REVIEW_BLOCKED
 priority: P0
-issue: ""
+issue: "https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/8"
 branch: "wp/ACTOR-2/WP-B"
 branch_owner_actor: ACTOR-2
 gate: G0

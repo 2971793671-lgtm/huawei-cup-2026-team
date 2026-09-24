@@ -21,7 +21,7 @@ review:
   owner_must_not_approve_alone: true
   no_reviewer_status: REVIEW_BLOCKED
 priority: P0
-issue: ""
+issue: "https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/11"
 branch: "integration/ACTOR-1/Q1-INT"
 branch_owner_actor: ACTOR-1
 gate: G3
