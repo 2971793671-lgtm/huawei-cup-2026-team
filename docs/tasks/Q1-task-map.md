@@ -2,6 +2,8 @@
 
 状态：计划稿。任务卡是执行入口，Prompt Registry 是模板入口，Prompt Run 和 `run_id` 是实际调用与结果入口。未达到前置任务 `ACCEPTED` 的任务只能保持 `DRAFT` 或 `READY`，不能把聊天输出当作实验依据。
 
+复制给自己或队友的角色化执行消息见 [`Q1-prompt-dispatch.md`](Q1-prompt-dispatch.md)；其中的 canonical prompt、任务卡和 GitHub 回链要求不可省略。
+
 | 顺序 | task_id | 任务 | Owner | Reviewer | Prompt | 状态 | 前置 |
 |---:|---|---|---|---|---|---|---|
 | 1 | T-Q1-001 | 原始数据契约与实验边界 | B | A | P-EXP-001@v1.0.0 | REVIEW | — |
