@@ -20,7 +20,7 @@ status: REVIEW
 acceptance_result: PASS_WITH_WARNINGS
 limitations: 22 个原始字段展开为 25 个派生标量列；16 个方向有证据并进入 higher-is-better 矩阵，9 个方向待核验并留空；A1 fit 估计 quantile_01_99 参数后复用于 A1 holdout/A2/A3；A2/A3 与 A1 存在同源 ID 重叠。
 review_request: 复核每个字段的语义和方向依据，确认列表压缩、A1 fit 参数冻结、强相关/域漂移解释及 pending_verification 处理。
-next_action: Reviewer A 在 GitHub PR 中审阅；确认后将任务卡和 Prompt Run 更新为 ACCEPTED，或登记 feedback_id 并触发 REWORK。
+next_action: ACTOR-2 在 GitHub PR 中完成独立复核；通过后由 ACTOR-1 以 A 身份签署并更新任务卡和 Prompt Run，或登记 feedback_id 并触发 REWORK。
 [/HANDOFF]
 ```
 

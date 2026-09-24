@@ -1,6 +1,10 @@
 ## 关联记录
 
 - Task ID：
+- Owner Role / Actor：
+- Reviewer Role / Actor：
+- Final Authority Role / Actor：
+- Independence Check：PASS / FAIL / REVIEW_BLOCKED
 - Feedback ID（如有）：
 - Prompt：`P-XXX-000@vX.Y.Z`
 - Prompt Run ID（如有）：

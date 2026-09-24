@@ -4,6 +4,16 @@ title: "问题一综合评价模型规格与评价协议"
 status: DRAFT # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
 owner: A
 reviewer: B
+owner_actor: ACTOR-2
+reviewer_actor: ACTOR-3
+final_authority:
+  role: A
+  actor: ACTOR-1
+review:
+  independent_peer_required: true
+  owner_reviewer_must_differ: true
+  same_actor_role_switch_is_not_independent: true
+  no_reviewer_status: REVIEW_BLOCKED
 priority: P0
 issue: ""
 branch: "feature/A/T-Q1-003"

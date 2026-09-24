@@ -2,6 +2,8 @@
 
 本项目采用“一名技术负责人 + 两个交付单元”的协作方式。角色描述的是责任边界，不限制每个人使用的编辑器、编程语言或 AI 工具。
 
+角色与真实执行人分开记录，详见 [`actor-role-policy.md`](actor-role-policy.md)。一个人可以同时承担 A、B，但 `owner_actor` 与 `reviewer_actor` 不能相同；更换角色名不能构成独立审核。
+
 ## 角色分工
 
 | 角色 | Owner 范围 | 必须交付 | 关键审核权 |
@@ -41,6 +43,8 @@ R 表示执行，A 表示最终负责，C 表示需要征询，I 表示知会。
 3. 实验结果写入带 `run_id` 的运行目录，不能只在聊天中报告数字。
 4. Owner 填写交接单并提交 Pull Request，由非 Owner 队员审核。
 5. 合并后，论文只引用已接受的 `run_id`；结论、图表、代码和数据清单通过 `paper/claim-ledger.csv` 关联。
+
+当同一 Actor 同时承担 Owner 和 A 时，先由另一名 Actor 完成独立 Peer Review，再由 A Actor 作为 `final_authority` 单独签署。没有独立 Reviewer 的任务保持 `REVIEW_BLOCKED`。
 
 ## 防止技术负责人堵塞
 

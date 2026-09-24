@@ -5,8 +5,13 @@
 ```text
 [HANDOFF]
 task_id: T-Q1-001
-owner: B
-reviewer: A
+owner_role: B
+owner_actor: ACTOR-1
+reviewer_role: C
+reviewer_actor: ACTOR-2
+final_authority_role: A
+final_authority_actor: ACTOR-1
+independence_check: PASS | FAIL | REVIEW_BLOCKED
 device_id: DEVICE-B-01
 branch: feature/B/T-Q1-001
 prompt_id: P-EXP-001@v1.0.0
