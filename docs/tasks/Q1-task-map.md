@@ -25,3 +25,10 @@
 ## 统一交接门
 
 每个任务完成时必须填写 `governance/handoff-template.md`，记录 `prompt_run_id`、`run_id`、commit、输入引用、命令、输出哈希、限制和 Reviewer 请求。发现执行失败、证据不足、方向争议或结果矛盾时，先登记 `feedback_id`，再决定重试、降级为探索性结果或暂停下游任务。
+
+## GitHub 管理边界
+
+1. 进入 GitHub 版本管理的内容包括：脱敏任务卡、提示词模板、`registry.csv`、Prompt Run 元数据、handoff、配置、脚本、实验 manifest、审计摘要和审核结论。每个可执行任务都必须能回链到分支、Issue 或 PR；当前 T-Q1-001、T-Q1-002 已分别绑定 PR #3、PR #4。
+2. 不进入 GitHub 的内容包括：`data/origin/` 原始数据、`problem/` 未公开题目、完整敏感 AI 对话、账号信息、密钥和未脱敏中间结果。GitHub 只保留相对路径、脱敏摘要和 SHA256。
+3. 分发到其他对话时，只发送对应任务卡、已登记的提示词模板和仓库链接；真实调用完成后必须回写 `prompt_run_id`、`run_id`、commit、输出哈希和 handoff，不能把聊天窗口作为唯一交付物。
+4. T-Q1-003 至 T-Q1-008 在进入 `READY` 或 `RUNNING` 前，须补齐 GitHub Issue/PR 回链；没有前置审核或回链时只能保持 `DRAFT`。
