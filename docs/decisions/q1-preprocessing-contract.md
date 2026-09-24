@@ -82,7 +82,7 @@ ID 交叉审计结果：
 - 远程数据卡的当前版本与题目附件的生成版本是否完全一致，需要记录版本/提交号并在 Reviewer A 复核。
 - PRRC logits 使用 argmax、softmax 期望等级、logit margin 还是保留六维，属于后续模型对照，不在本草案中冻结。
 - 二分类 logits 是否需要温度校准尚无标注验证集，预处理阶段不得自行校准。
-- A1 fit/holdout 的分层字段、随机种子和重复 ID 规则需要在 `configs/q1-preprocess.yaml` 中冻结。
+- A1 fit/holdout 的分层字段、随机种子和重复 ID 规则需要在 `configs/q1-indicator-normalization.yaml` 中冻结。
 - 当前 A2/A3 重叠发现尚未写入 `T-Q1-001` 的已接受契约，需作为 Reviewer A 的 P1 复核项或反馈案例登记。
 
 ## 允许的下一步

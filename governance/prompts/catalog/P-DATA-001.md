@@ -1,7 +1,7 @@
 ---
 prompt_id: P-DATA-001
 version: v1.0.0
-status: draft
+status: trial
 owner: B
 reviewer: A
 ---
