@@ -11,7 +11,7 @@ provider: OpenAI
 input_summary: "A0 原始数据契约、A1 候选质量字段、题目数据说明和可核验字段定义；建立 22 个质量指标的语义、方向、列表压缩、A1 拟合归一化和漂移审计，不建立质量评分模型。"
 output_ref: "indicator_catalog.yaml; data/processed/q1_X_norm_v1.csv; normalization_stats.json; indicator_audit.csv; normalization_sensitivity.csv; data/manifests/q1_preprocessed.yaml; configs/q1-indicator-normalization.yaml; scripts/q1_indicator_preprocess.py"
 output_sha256: "indicator_catalog.yaml=d8b57018240df1d0e94faf73f4c07acc423a49eb8396e16485d402cd5fe39ed5; data/processed/q1_X_norm_v1.csv=0c61e680e0ea086976334670166cbccbdf9520541a9eb80aaf3b098a5cfb465a; normalization_stats.json=66f4a4f41bf723efaea2ff2d8340741698c46a4fad57bc513ea7650ea87ae34a; indicator_audit.csv=29f935b68093841cd0c8061e29760701d66afbf9325ca787681ffef209abc310; normalization_sensitivity.csv=854535096ebc4bb1bee5df897b794743bfa5e260f3cece8c911c68f5555e1f4c; data/manifests/q1_preprocessed.yaml=8c394ba10c88881ca4ce0bdacd0d4998fb5579cc435524e5cb6b74cc3f3c4c17"
-git_commit: 594e2ec4fc38d002afceac178a5c9f06a40a9738
+git_commit: 7db9a5d
 needs_human_review: true
 status: REVIEW # TRIAL | REVIEW | ACCEPTED | REJECTED
 reviewer: A
