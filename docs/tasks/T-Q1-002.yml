@@ -7,6 +7,7 @@ reviewer: A
 priority: P1
 issue: ""
 branch: "feature/B/T-Q1-002"
+pr: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/4"
 prompt:
   prompt_id: P-DATA-001
   version: v1.0.0

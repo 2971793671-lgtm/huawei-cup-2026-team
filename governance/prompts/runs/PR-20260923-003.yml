@@ -15,5 +15,6 @@ git_commit: 7db9a5d
 needs_human_review: true
 status: REVIEW # TRIAL | REVIEW | ACCEPTED | REJECTED
 reviewer: A
+pr: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/4"
 failure_or_limitations: "9 个输出方向待核验并在最终矩阵留空；A2/A3 与 A1 存在 ID 重叠，不能作为独立来源真值；缺失/非有限值不填补；未进行质量总分、权重、PP-GA 或模型拟合。"
 next_action: "Reviewer A 复核语义、方向、列表压缩、A1 冻结边界、强相关和域漂移审计；通过后更新任务和 Prompt Run 为 ACCEPTED。"
