@@ -260,7 +260,8 @@ def write_catalog(path: Path, config: dict[str, Any]) -> str:
         "task_id": config["task_id"], "run_id": config["run_id"], "prompt_run_id": config["prompt_run_id"],
         "status": "REVIEW", "needs_human_review": True,
         "scope": "22 raw quality fields; list fields may expand to multiple scalar output columns",
-        "direction_policy": "Only evidence-backed benefit/cost directions enter the final higher-is-better matrix. pending_verification outputs are withheld from final matrix cells.",
+        "direction_policy": "Selected proxy directions are assumptions for this experiment, not universal cross-domain monotonic quality laws. Nine pending outputs remain withheld.",
+        "direction_qualification": "Non-alphabetic fraction and top word 2/3-gram concentration are treated as costs in the baseline; code, math, tables and legitimate repetition require domain checks. DSIR measures target affinity. confirmed retains the historical operational flag only.",
         "sources": {"problem_pdf": PDF_REF, "quality_data_card": SOURCE_CARD, "qurater_definition": QURATER_SOURCE},
         "normalization": {"fit_dataset": "A1", "fit_partition": "A1 fit only", "primary": "quantile_01_99", "alternatives": ["min_max", "rank_ecdf", "robust_z_logistic"], "reuse": ["A1 holdout", "A2", "A3"]},
         "indicators": [],
@@ -281,11 +282,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--config", type=Path, default=Path("configs/q1-indicator-normalization.yaml"))
+    parser.add_argument("--raw-root", type=Path, help="Read-only external raw root; never copied")
     args = parser.parse_args()
     root = args.root.resolve()
     config_path = args.config if args.config.is_absolute() else root / args.config
     config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-    raw_root = root / config["raw_root"]
+    raw_root = args.raw_root.resolve() if args.raw_root else root / config["raw_root"]
     dataset_paths = {dataset_id: raw_root / relative_path for dataset_id, relative_path in config["datasets"].items()}
     output_specs_map = output_specs()
     output_names = list(output_specs_map)
@@ -438,6 +440,7 @@ def main() -> None:
         "schema_version": "q1.indicator-normalization-stats.v1", "task_id": config["task_id"], "run_id": config["run_id"], "prompt_run_id": config["prompt_run_id"], "needs_human_review": True,
         "config_path": config_path.relative_to(root).as_posix(), "config_sha256": sha256_file(config_path), "catalog_sha256": catalog_hash,
         "raw_hash_before": raw_hash_before, "raw_hash_after": raw_hash_after, "raw_hash_stable": raw_hash_before == raw_hash_after,
+        "audit_sampling_note": "Legacy descriptive drift summaries use the first 5000 finite values per dataset/indicator and per A1-fit domain/indicator. Matrix and fit parameters use all eligible rows; full normalized support audits are supplied by q1_score_models.py.",
         "record_counts": {dataset_id: dict(counter) for dataset_id, counter in counts.items()}, "output_rows": output_rows, "output_columns": output_names,
         "nonfinite_component_counts": dict(sorted(nonfinite_components.items())), "pending_direction_outputs": [name for name, item in output_specs_map.items() if item["direction_status"] == "pending_verification"],
         "fit_statistics": stats_by_name, "primary_method": "quantile_01_99", "methods_compared": methods,

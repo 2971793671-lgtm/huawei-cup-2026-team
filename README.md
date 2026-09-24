@@ -50,3 +50,14 @@ deliverables/          封卷和提交材料
 先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)、[docs/architecture.md](docs/architecture.md)、[全流程架构图](docs/architecture-flow.md)、[governance/roles-and-raci.md](governance/roles-and-raci.md)、[governance/prompts/README.md](governance/prompts/README.md)、[paper/README.md](paper/README.md) 和 [governance/release-checklist.md](governance/release-checklist.md)。
 
 论文模板来源和本项目的路径适配记录见 [paper/TEMPLATE-SOURCE.md](paper/TEMPLATE-SOURCE.md)。
+
+## B 的问题一第一小问交付（待审核）
+
+本次选择 CRITIC 赋权＋固定理想点 TOPSIS。已覆盖 A1/A2/A3 全部 272,505 条记录，联合语料去重后 261,086 个样本。交付状态为 REVIEW；T-Q1-003/004 的团队 ACCEPTED 状态未被替代。
+
+- [第一小问报告](docs/decisions/q1-quality-evaluation-report.md)
+- [领域评分与 A1 对照](experiments/runs/q1-critic-topsis-20260924-r01/tables/full_vs_A1.csv)
+- [完整复现说明](README-delivery.md)
+- [B → A 交接单](docs/tasks/T-Q1-004-handoff.md)
+
+完整派生矩阵和逐样本评分由 B 通过队伍内部渠道交接；公开仓库仅保存聚合表、代码、配置、报告与文件哈希。原始附件、题目与完整样本明细均不在本次提交中。

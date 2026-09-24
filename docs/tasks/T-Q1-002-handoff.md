@@ -1,27 +1,20 @@
-# [HANDOFF] 问题一指标语义与归一化
+# T-Q1-002：B → A 交接
 
-```text
-[HANDOFF]
-task_id: T-Q1-002
 owner: B
 reviewer: A
-device_id: DEVICE-LOCAL-CODEX
-branch: feature/B/T-Q1-002
-prompt_id: P-DATA-001@v1.0.0
-prompt_run_id: PR-20260923-003
-run_id: q1-indicator-normalization-20260923-r01
-input_refs: data/manifests/q1_raw.yaml; docs/decisions/q1-data-contract.md; problem/数据说明_已清除隐藏误导文字.pdf; problem/隐藏文字检查报告.md
-commit: 7db9a5d
-pr: https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/4
-changed_files: indicator_catalog.yaml; configs/q1-indicator-normalization.yaml; scripts/q1_indicator_preprocess.py; data/manifests/q1_preprocessed.yaml; normalization_stats.json; indicator_audit.csv; normalization_sensitivity.csv; docs/decisions/q1-preprocessing-contract.md; docs/tasks/T-Q1-002.yml; governance/prompts/runs/PR-20260923-003.yml; experiments/index.csv; governance/ai-use-log.csv
-command: python -X utf8 scripts/q1_indicator_preprocess.py --root . --config configs/q1-indicator-normalization.yaml
-outputs: indicator_catalog.yaml; data/processed/q1_X_norm_v1.csv; normalization_stats.json; indicator_audit.csv; normalization_sensitivity.csv; data/manifests/q1_preprocessed.yaml
-status: REVIEW
-acceptance_result: PASS_WITH_WARNINGS
-limitations: 22 个原始字段展开为 25 个派生标量列；16 个方向有证据并进入 higher-is-better 矩阵，9 个方向待核验并留空；A1 fit 估计 quantile_01_99 参数后复用于 A1 holdout/A2/A3；A2/A3 与 A1 存在同源 ID 重叠。
-review_request: 复核每个字段的语义和方向依据，确认列表压缩、A1 fit 参数冻结、强相关/域漂移解释及 pending_verification 处理。
-next_action: Reviewer A 在 GitHub PR 中审阅；确认后将任务卡和 Prompt Run 更新为 ACCEPTED，或登记 feedback_id 并触发 REWORK。
-[/HANDOFF]
-```
+prompt_run_id: PR-20260924-B-TOPSIS-001
+run_id: q1-indicator-normalization-20260924-r02
+source_commit: 3c7d3512301df6899d293e69a856027c7a4c530b
+new_code_commit: 尚未提交；按 SHA256 固定本包代码
+status: REVIEW（交付包）；原仓库 ACCEPTED 状态未更改
+needs_human_review: true
+acceptance_result: PASS_WITH_WARNINGS（数值复核，非 Reviewer 签字）
 
-本交接单只包含脱敏元数据和相对路径，不包含原始数据、题目正文或完整 AI 对话。
+输入和输出：见 data/manifests/、对应 run 的 run_manifest.json 或 data_manifest.yaml、整包文件清单。
+运行命令：见 README-delivery.md。原始附件需在本地配置；Git 包不含原始附件或完整样本明细。
+验证：5 项模型性质测试、23 项独立核对通过；预处理原始文件哈希不变。
+限制：方向及 DSIR 适用性、扩展同源重叠、A1 截断、旧 manifest 历史原因未解、缺少人工/下游真值验证。
+审核请求：核对主模型的固定理想点与权重一次进入距离约定、样本聚合口径、指标方向边界和新旧来源关系。
+下一步：A 审阅本包及 003 规格接口；在队伍流程确认后合并。此次以任务分支提交，等待 A 审阅后合并。
+
+submission_branch: feature/B/T-Q1-004-critic-topsis

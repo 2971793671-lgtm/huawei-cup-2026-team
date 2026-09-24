@@ -1,12 +1,16 @@
 schema_version: q1.indicator-catalog.v1
 task_id: T-Q1-002
-run_id: q1-indicator-normalization-20260923-r01
-prompt_run_id: PR-20260923-003
+run_id: q1-indicator-normalization-20260924-r02
+prompt_run_id: PR-20260924-B-TOPSIS-001
 status: REVIEW
 needs_human_review: true
 scope: 22 raw quality fields; list fields may expand to multiple scalar output columns
-direction_policy: Only evidence-backed benefit/cost directions enter the final higher-is-better
-  matrix. pending_verification outputs are withheld from final matrix cells.
+direction_policy: Selected proxy directions are assumptions for this experiment, not
+  universal cross-domain monotonic quality laws. Nine pending outputs remain withheld.
+direction_qualification: Non-alphabetic fraction and top word 2/3-gram concentration
+  are treated as costs in the baseline; code, math, tables and legitimate repetition
+  require domain checks. DSIR measures target affinity. confirmed retains the historical
+  operational flag only.
 sources:
   problem_pdf: problem/数据说明_已清除隐藏误导文字.pdf#page=9
   quality_data_card: https://huggingface.co/datasets/opendatalab/SlimPajama-Meta-rater/blob/1b31bb3/README.md

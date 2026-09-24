@@ -1,12 +1,12 @@
 {
   "schema_version": "q1.indicator-normalization-stats.v1",
   "task_id": "T-Q1-002",
-  "run_id": "q1-indicator-normalization-20260923-r01",
-  "prompt_run_id": "PR-20260923-003",
+  "run_id": "q1-indicator-normalization-20260924-r02",
+  "prompt_run_id": "PR-20260924-B-TOPSIS-001",
   "needs_human_review": true,
   "config_path": "configs/q1-indicator-normalization.yaml",
-  "config_sha256": "156dded48042e7c63889854109f7d2504d63dc11a7b8fa2789b9cf172025afeb",
-  "catalog_sha256": "d8b57018240df1d0e94faf73f4c07acc423a49eb8396e16485d402cd5fe39ed5",
+  "config_sha256": "b01be78c221730cff5990f51f0f98442df7b5e0629f594709db418eb0e32a7ab",
+  "catalog_sha256": "1eaf3aedc644b318f4231e3fe7470ca0998c30f694ef584f334154cfc434f32f",
   "raw_hash_before": {
     "A1": "14a4eeec4c7d98efd78942ddd9c1329640527f2108e73227be449bc1a8dbe579",
     "A2": "ae1e3399f84f605d994fc60b46984d742e14abb3355d8e7a91822eae1b99e16a",
@@ -18,6 +18,7 @@
     "A3": "7af069c71c6027a10f2013cc14dd9d5d17855c264734f69c955544ff6cff7382"
   },
   "raw_hash_stable": true,
+  "audit_sampling_note": "Legacy descriptive drift summaries use the first 5000 finite values per dataset/indicator and per A1-fit domain/indicator. Matrix and fit parameters use all eligible rows; full normalized support audits are supplied by q1_score_models.py.",
   "record_counts": {
     "A1": {
       "fit": 40919,
@@ -509,7 +510,7 @@
     "robust_z_logistic"
   ],
   "outputs": {
-    "matrix": "data/processed/q1_X_norm_v1.csv",
+    "matrix": "data/processed/q1_X_norm_v2.csv",
     "matrix_sha256": "0c61e680e0ea086976334670166cbccbdf9520541a9eb80aaf3b098a5cfb465a",
     "audit": "indicator_audit.csv",
     "audit_sha256": "29f935b68093841cd0c8061e29760701d66afbf9325ca787681ffef209abc310",
