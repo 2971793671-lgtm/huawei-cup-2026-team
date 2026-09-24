@@ -40,3 +40,7 @@ limitations:
 - WP-A 原任务卡、交接及规范产物保持原样；候选修复单列，不替 WP-A Owner 修改结果。
 - 逐样本矩阵及分数仍须经受控团队渠道提供，Git 仅存公开元数据。
 next_action: ACTOR-3 独立复核模型提案，ACTOR-1 检查接口；WP-A Owner 决定是否采用候选预处理修复。
+
+head_repository: 2971793671-lgtm/huawei-cup-2026-team
+base_repository: xiaoyuankele/huawei-cup-2026-team
+base_branch: main

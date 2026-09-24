@@ -13,8 +13,8 @@
     },
     {
       "path": "README-delivery.md",
-      "bytes": 3698,
-      "sha256": "2c226c7f924b7e3cb49e9c6a8de644dfa5c1187bc291e90d6af97af68ad5b4a6"
+      "bytes": 3728,
+      "sha256": "fb30386431f9fcbe9cb2fbadb6f5c0ba1a8ac1ee7720dcf641f966e7f1a5aef2"
     },
     {
       "path": "README.md",
@@ -73,8 +73,8 @@
     },
     {
       "path": "docs/tasks/WP-B-delivery.yml",
-      "bytes": 1682,
-      "sha256": "142f415c715c463510a920dbe95ab93e0d1065f61208f172d1e00109481c068d"
+      "bytes": 1806,
+      "sha256": "df736fb4396b0d9fa90ba692eccfe681031e48b2f1667b6dc4a8f3c58bf91f64"
     },
     {
       "path": "docs/tasks/WP-B-submission-map.json",
@@ -639,7 +639,7 @@
     {
       "path": "governance/ai-use-log.csv",
       "bytes": 3826,
-      "sha256": "e2c55682cebc769ebd183a3137e40bddc82e50b1c1e7804e420e3c98d4686573"
+      "sha256": "4c2b2b341d401edb3ea8c5ba10750aff4ff29c27f50f1770213be68ea139af27"
     },
     {
       "path": "governance/feedback/index.csv",

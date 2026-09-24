@@ -1,6 +1,6 @@
 # WP-B：CRITIC–TOPSIS 待审核交付
 
-本提交进入团队主仓库 `xiaoyuankele/huawei-cup-2026-team` 的 `wp/ACTOR-2/WP-B` 分支。状态为 PARTIAL / REVIEW_BLOCKED，G1、Peer Review、Integrator 未完成。真实人员与 Actor 的对应关系由受控分配记录决定，本提交不代签。
+本提交从个人 fork 的 `wp/ACTOR-2/WP-B` 分支向团队主仓库 `xiaoyuankele/huawei-cup-2026-team` 的 main 发起 PR。状态为 PARTIAL / REVIEW_BLOCKED，G1、Peer Review、Integrator 未完成。真实人员与 Actor 的对应关系由受控分配记录决定，本提交不代签。
 
 ## 分类入口
 
