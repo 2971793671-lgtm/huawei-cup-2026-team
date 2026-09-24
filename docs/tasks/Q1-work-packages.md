@@ -4,14 +4,14 @@
 
 ## 分配表
 
-| 工作包 | Owner | 代码交付 | 实验交付 | 论文交付 | Peer Reviewer | Release Integrator | 正式实验门 |
-|---|---|---|---|---|---|---|---|
-| WP-A 数据与证据 | ACTOR-1 | 审计、预处理、manifest、指标目录 | 数据角色、A1 fit/holdout、重叠、缺失、漂移和泄漏 | 数据方法、预处理和限制段 | ACTOR-2 | ACTOR-3 | G0 |
-| WP-B 模型与优化 | ACTOR-2 | 统一评分接口、基线、线性投影、PP-GA、对照 | 分层模型比较、敏感性、失败运行 | 模型定义、目标函数、实验协议 | ACTOR-3 | ACTOR-1 | G1 |
-| WP-C 验证与结果 | ACTOR-3 | 冲突、验证、稳健性、图表和结果表脚本 | rank reversal、bootstrap、重复 seed、域分层 | 结果、冲突解释、图表和限制段 | ACTOR-1 | ACTOR-2 | G2 |
-| Q1-INT/T-Q1-009 | ACTOR-1（协调） | claim-ledger、整合脚本、复现检查 | 全量复现、论文数字一致性、发布清单 | 三段合并、主张审查和最终稿 | 三人共同 | 三人共同 | G3 |
+| 工作包 | Issue | Owner | 代码交付 | 实验交付 | 论文交付 | Peer Reviewer | Release Integrator | 正式实验门 |
+|---|---|---|---|---|---|---|---|---|
+| WP-A 数据与证据 | [#8](https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/8) | ACTOR-1 | 审计、预处理、manifest、指标目录 | 数据角色、A1 fit/holdout、重叠、缺失、漂移和泄漏 | 数据方法、预处理和限制段 | ACTOR-2 | ACTOR-3 | G0 |
+| WP-B 模型与优化 | [#9](https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/9) | ACTOR-2 | 统一评分接口、基线、线性投影、PP-GA、对照 | 分层模型比较、敏感性、失败运行 | 模型定义、目标函数、实验协议 | ACTOR-3 | ACTOR-1 | G1 |
+| WP-C 验证与结果 | [#10](https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/10) | ACTOR-3 | 冲突、验证、稳健性、图表和结果表脚本 | rank reversal、bootstrap、重复 seed、域分层 | 结果、冲突解释、图表和限制段 | ACTOR-1 | ACTOR-2 | G2 |
+| Q1-INT/T-Q1-009 | [#11](https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/11) | ACTOR-1（协调） | claim-ledger、整合脚本、复现检查 | 全量复现、论文数字一致性、发布清单 | 三段合并、主张审查和最终稿 | 三人共同 | 三人共同 | G3 |
 
-## 发给 ACTOR-1：WP-A
+## 发给 ACTOR-1：WP-A（Issue [#8](https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/8)）
 
 ```text
 你是 WP-A Owner。交付必须同时包含代码、实验和论文段。
@@ -23,7 +23,7 @@
 先经过 ACTOR-2 Peer Review，再由 ACTOR-3 作为 Release Integrator 检查接口、manifest、claim ledger 和 handoff。状态依次写入 RUN_COMPLETE、PEER_REVIEW、PACKAGE_ACCEPTED。
 ```
 
-## 发给 ACTOR-2：WP-B
+## 发给 ACTOR-2：WP-B（Issue [#9](https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/9)）
 
 ```text
 你是 WP-B Owner。交付必须同时包含代码、实验和论文段。
@@ -35,7 +35,7 @@
 ACTOR-3 负责 Peer Review，ACTOR-1 负责 Release Integrator 检查。未通过 G1 只能准备接口，不能写正式模型结论。
 ```
 
-## 发给 ACTOR-3：WP-C
+## 发给 ACTOR-3：WP-C（Issue [#10](https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/10)）
 
 ```text
 你是 WP-C Owner。交付必须同时包含代码、实验和论文段。
@@ -48,7 +48,7 @@ G0 后即可准备冲突诊断、验证、图表和论文骨架；G2 前只能�
 ACTOR-1 负责 Peer Review，ACTOR-2 负责 Release Integrator 检查。T-Q1-008 只交付结果段，不独占最终论文整合。
 ```
 
-## Q1-INT/T-Q1-009
+## Q1-INT/T-Q1-009（Issue [#11](https://github.com/xiaoyuankele/huawei-cup-2026-team/issues/11)）
 
 ```text
 你负责跨包整合，不得替任何 Owner 重写未经复核的结果。
