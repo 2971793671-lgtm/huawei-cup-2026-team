@@ -1,0 +1,4 @@
+OS: Windows 10.0.19045
+Python: 3.11.5
+PyYAML: 6.0.3
+Tool: Codex desktop / gpt-6-astra

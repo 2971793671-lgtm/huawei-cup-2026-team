@@ -1,0 +1,14 @@
+{
+  "records": 272505,
+  "a1_fit": 40919,
+  "a1_holdout": 10311,
+  "a2": 17523,
+  "a3": 203752,
+  "raw_fields": 22,
+  "derived_outputs": 25,
+  "confirmed_direction_outputs": 16,
+  "pending_direction_outputs": 9,
+  "primary_method": "quantile_01_99",
+  "methods_compared": ["min_max", "quantile_01_99", "rank_ecdf", "robust_z_logistic"],
+  "quality_score_model": false
+}
