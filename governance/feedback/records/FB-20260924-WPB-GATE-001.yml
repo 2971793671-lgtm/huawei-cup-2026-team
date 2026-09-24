@@ -11,7 +11,7 @@ release_approver_actors:
 - ACTOR-2
 - ACTOR-3
 task_id: T-Q1-004
-pr: TEAM_PR_PENDING_CREATION
+pr: https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/12
 observed_behavior: User-authorized local CRITIC-TOPSIS runs exist but T-Q1-003 remains
   DRAFT and G1 is not accepted
 expected_behavior: Only accepted interfaces and independent peer/integrator review

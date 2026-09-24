@@ -10,6 +10,6 @@
 - 主运行：`experiments/runs/q1-critic-topsis-20260924-r01/`
 - 方法草稿：`paper/sections/drafts/q1-critic-topsis-method.md`
 - 复现与分类：根目录 `README-delivery.md`
-- PR：TEAM_PR_PENDING_CREATION
+- PR：https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/12
 
 复核顺序：ACTOR-3 检查模型公式、方向假设、重叠去重及适用性；ACTOR-1 检查输入接口、manifest 和主张回链。未正式验收前不将结果写入主论文。

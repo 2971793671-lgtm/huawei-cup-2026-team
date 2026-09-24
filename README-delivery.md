@@ -45,4 +45,4 @@ python -X utf8 scripts/plot_q1_topsis.py --root .
 
 G1 与模型规格待审、WP-A 元数据历史差异未结案，均已登记反馈。正式任务状态和主论文不提升为已接受。delivery_file_manifest.json 保留历史压缩包证据；submission_manifest.json 是本次团队提交路径及哈希清单。
 
-团队 PR：TEAM_PR_PENDING_CREATION
+团队 PR：https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/12

@@ -53,7 +53,7 @@ submission_candidate:
   status: REVIEW_BLOCKED
   completeness: PARTIAL
   branch: wp/ACTOR-2/WP-B
-  pr: TEAM_PR_PENDING_CREATION
+  pr: https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/12
   handoff: docs/tasks/WP-B-delivery.yml
   paper_section: paper/sections/drafts/q1-critic-topsis-method.md
   primary_run_id: q1-critic-topsis-20260924-r01

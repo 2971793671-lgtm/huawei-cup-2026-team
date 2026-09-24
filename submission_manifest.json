@@ -13,8 +13,8 @@
     },
     {
       "path": "README-delivery.md",
-      "bytes": 3728,
-      "sha256": "fb30386431f9fcbe9cb2fbadb6f5c0ba1a8ac1ee7720dcf641f966e7f1a5aef2"
+      "bytes": 3764,
+      "sha256": "b7af185d0c909ceb23383c9a1b6afca4c892cddebf06fc226dbfa6ca3bea2654"
     },
     {
       "path": "README.md",
@@ -63,18 +63,18 @@
     },
     {
       "path": "docs/tasks/T-Q1-004-handoff.md",
-      "bytes": 944,
-      "sha256": "f344cbcdab7bca62a3556ee3fe9e794f38b74ff7781675609b48fbd162e19eb2"
+      "bytes": 980,
+      "sha256": "6105fb1d389af9c111bcb28ac066b01b9eabd55ed6d84ab5294613f9068fdd1d"
     },
     {
       "path": "docs/tasks/T-Q1-004.yml",
-      "bytes": 2381,
-      "sha256": "cb00bc6ea33561aebe52b570bdc9b41fb12c9c9a9bfc97bba1144163dfe3b8c4"
+      "bytes": 2417,
+      "sha256": "843e0467d4f80d8788c0d8481f59f08c075dbba9a937fe5f5c7605e18bdda3f2"
     },
     {
       "path": "docs/tasks/WP-B-delivery.yml",
-      "bytes": 1806,
-      "sha256": "df736fb4396b0d9fa90ba692eccfe681031e48b2f1667b6dc4a8f3c58bf91f64"
+      "bytes": 1842,
+      "sha256": "9ae923339aaafa74ea2541e85995ce58131d89e5da8e06d13683f55dfea25dce"
     },
     {
       "path": "docs/tasks/WP-B-submission-map.json",
@@ -83,8 +83,8 @@
     },
     {
       "path": "experiments/index.csv",
-      "bytes": 3549,
-      "sha256": "a751f3965c8cc0365128a5fde3593e6ce335c58b1d8634a8d302acc34990e285"
+      "bytes": 3801,
+      "sha256": "dc50b9e51a7911966c9ba942674017146bf14516947214e6247398218092b599"
     },
     {
       "path": "experiments/runs/q1-critic-sum-20260924-r02/README.md",
@@ -148,8 +148,8 @@
     },
     {
       "path": "experiments/runs/q1-critic-sum-20260924-r02/team_handoff.yaml",
-      "bytes": 1798,
-      "sha256": "cf9f8447c72f9f865b5343b92e3e066cc0ea133441fe041f05d148d8dbfcb1b5"
+      "bytes": 1834,
+      "sha256": "44fd22b1bb9b3c8b66bd7a99afa3d885fadd42ccebeeeb82d9eb76133f7ec75f"
     },
     {
       "path": "experiments/runs/q1-critic-topsis-20260924-r01/README.md",
@@ -268,8 +268,8 @@
     },
     {
       "path": "experiments/runs/q1-critic-topsis-20260924-r01/team_handoff.yaml",
-      "bytes": 1801,
-      "sha256": "1aaa314a385cc399f2a7289d8c238b77dcb4de5f9bd21c41d6d4fb0859aa7cf7"
+      "bytes": 1837,
+      "sha256": "7e8e343161c983e07c36ca01f96ba19589b03cd5191e4c40d6ceb2915d0fe5bf"
     },
     {
       "path": "experiments/runs/q1-critic-topsis-20260924-r01/validation/archive_reproduction.json",
@@ -368,8 +368,8 @@
     },
     {
       "path": "experiments/runs/q1-equal-sum-20260924-r02/team_handoff.yaml",
-      "bytes": 1797,
-      "sha256": "bd92453974bf4e40464d8345f41a4d4d8b7d1674cf251fdde6f6f1ccc81c3b64"
+      "bytes": 1833,
+      "sha256": "027090d050107c564bbe224cf9f449086211d6c787b7e9c25e7a5faf12dcc0b9"
     },
     {
       "path": "experiments/runs/q1-historical-model-comparison-20260924-archive/README.md",
@@ -438,8 +438,8 @@
     },
     {
       "path": "experiments/runs/q1-indicator-normalization-20260924-r02/team_handoff.yaml",
-      "bytes": 1892,
-      "sha256": "efa0ed7dd5a2ed35c56042c251fe85351ee193467caa2c0d86976fa34ca0060c"
+      "bytes": 1928,
+      "sha256": "50ce941f2456dbfa4de852f46535a064e5c614514ded3275de7edfd140ef64a1"
     },
     {
       "path": "experiments/runs/q1-topsis-no3cost-20260924-r01/README.md",
@@ -503,8 +503,8 @@
     },
     {
       "path": "experiments/runs/q1-topsis-no3cost-20260924-r01/team_handoff.yaml",
-      "bytes": 1802,
-      "sha256": "e4e2e80806d4c703c3ea14385a3d2337f28689375fc587c455db818b0759035b"
+      "bytes": 1838,
+      "sha256": "02ef949d76360d882d2c9190a17606747c77d47eb140576d4ab0dfca9b9cfd81"
     },
     {
       "path": "experiments/runs/q1-topsis-nodsir-20260924-r01/README.md",
@@ -568,8 +568,8 @@
     },
     {
       "path": "experiments/runs/q1-topsis-nodsir-20260924-r01/team_handoff.yaml",
-      "bytes": 1801,
-      "sha256": "53e5cc304081c4117817ff8605b30188fd6893714d1ba929a185c1adf3b41a67"
+      "bytes": 1837,
+      "sha256": "bafea7e5a6c3a3b5c07d4b812ccab014ece96d606903499b01ea53102e965ce6"
     },
     {
       "path": "experiments/runs/q1-topsis-wsquared-20260924-r01/README.md",
@@ -633,13 +633,13 @@
     },
     {
       "path": "experiments/runs/q1-topsis-wsquared-20260924-r01/team_handoff.yaml",
-      "bytes": 1803,
-      "sha256": "785278686b467cb522829e52f8b2f5acc334f09a975d89df94a874da2c1d4f6f"
+      "bytes": 1839,
+      "sha256": "90e5a1a935ac3463acb8c9ff54d33bee340b2c73e465edf3fdaf4d285f86e31d"
     },
     {
       "path": "governance/ai-use-log.csv",
       "bytes": 3826,
-      "sha256": "4c2b2b341d401edb3ea8c5ba10750aff4ff29c27f50f1770213be68ea139af27"
+      "sha256": "63c76b31f391db3d1a742f3b87531f16727519c565af937fd1a8f670964cddc4"
     },
     {
       "path": "governance/feedback/index.csv",
@@ -653,8 +653,8 @@
     },
     {
       "path": "governance/feedback/records/FB-20260924-WPB-GATE-001.yml",
-      "bytes": 841,
-      "sha256": "e5617bc4947ff1cc9dfda524a404ce1593ff12d27db5704dfadd0c84c03620a2"
+      "bytes": 877,
+      "sha256": "daec202ad05a691a31e3643f7d1502e5f17cbb091d1eed57816f92da99861e77"
     },
     {
       "path": "governance/prompts/runs/PR-20260924-B-TOPSIS-001.yml",
@@ -663,8 +663,8 @@
     },
     {
       "path": "governance/prompts/runs/PR-20260924-WPB-SUBMIT-001.yml",
-      "bytes": 992,
-      "sha256": "fd0accc12da8e03221be145e916c251d95d47038502eccc4d4bbad9f6969fa1b"
+      "bytes": 1028,
+      "sha256": "bfbed64f679a5f11b93faf1eea3ad473051ef5b781f4852ac15e079eb71e90da"
     },
     {
       "path": "paper/claim-ledger.csv",
@@ -776,5 +776,6 @@
       "bytes": 1558,
       "sha256": "61858ec9055b89e77ef4817400f8166b6d774bad2157921f2b78ce8fa93b28e6"
     }
-  ]
+  ],
+  "team_pr": "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/12"
 }
