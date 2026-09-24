@@ -10,7 +10,7 @@
 | 2 | T-Q1-002 | 指标语义、方向、归一化和泄漏审计 | B / ACTOR-1 | ACTOR-2 | A / ACTOR-1 | P-DATA-001@v1.0.0 | REVIEW | T-Q1-001（不要求已接受，但不得绕过其限制） |
 | 3 | T-Q1-003 | 综合评价模型规格与评价协议 | A / ACTOR-2 | ACTOR-3 | A / ACTOR-1 | P-MODEL-002@v1.0.0 | DRAFT | T-Q1-002 |
 | 4 | T-Q1-004 | 基线、PP-GA 和对照模型实现 | B / ACTOR-2 | ACTOR-3 | A / ACTOR-1 | P-EXP-002@v1.0.0 | DRAFT | T-Q1-002、T-Q1-003 |
-| 5 | T-Q1-005 | 指标冲突、权重敏感性和解释 | A / ACTOR-3 | ACTOR-2 | A / ACTOR-1 | P-CONFLICT-001@v1.0.0 | DRAFT | T-Q1-004 |
+| 5 | T-Q1-005 | 指标冲突、权重敏感性和解释 | C / ACTOR-3 | ACTOR-2 | A / ACTOR-1 | P-CONFLICT-001@v1.0.0 | DRAFT | T-Q1-004 ACCEPTED（ACTOR-3 复核、ACTOR-1 签署） |
 | 6 | T-Q1-006 | 内部/外部验证与稳健性分析 | C / ACTOR-3 | ACTOR-2 | A / ACTOR-1 | P-VALID-001@v1.0.0 | DRAFT | T-Q1-004、T-Q1-005 |
 | 7 | T-Q1-007 | Q1 图表与结果表 | C / ACTOR-3 | ACTOR-2 | A / ACTOR-1 | P-FIG-001@v1.0.0 | DRAFT | T-Q1-005、T-Q1-006 |
 | 8 | T-Q1-008 | Q1 论文段落与主张登记 | C / ACTOR-3 | ACTOR-2 | A / ACTOR-1 | P-PAPER-001@v1.0.0 | DRAFT | T-Q1-006、T-Q1-007 |

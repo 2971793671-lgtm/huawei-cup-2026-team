@@ -12,8 +12,12 @@ reviewer_actor: ACTOR-2
 final_authority_role: A
 final_authority_actor: ACTOR-1
 independence_check: PASS | FAIL | REVIEW_BLOCKED
+reviewer_decision: PENDING | PASS | PASS_WITH_WARNINGS | FAIL
+review_feedback_id: <feedback_id 或 NONE>
+final_decision: PENDING | ACCEPTED | REWORK | BLOCKED
 device_id: DEVICE-B-01
 branch: feature/B/T-Q1-001
+branch_owner_actor: ACTOR-1
 prompt_id: P-EXP-001@v1.0.0
 prompt_run_id: PR-20260923-001
 run_id: R-Q1-001-20260923

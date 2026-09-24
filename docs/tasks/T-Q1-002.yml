@@ -15,8 +15,9 @@ review:
   same_actor_role_switch_is_not_independent: true
   no_reviewer_status: REVIEW_BLOCKED
 priority: P1
-issue: ""
+issue: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/4"
 branch: "feature/B/T-Q1-002"
+branch_owner_actor: ACTOR-1
 pr: "https://github.com/xiaoyuankele/huawei-cup-2026-team/pull/4"
 prompt:
   prompt_id: P-DATA-001

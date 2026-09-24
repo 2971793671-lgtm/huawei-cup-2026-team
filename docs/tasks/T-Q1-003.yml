@@ -3,7 +3,7 @@ task_id: T-Q1-003
 title: "问题一综合评价模型规格与评价协议"
 status: DRAFT # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
 owner: A
-reviewer: B
+reviewer: C
 owner_actor: ACTOR-2
 reviewer_actor: ACTOR-3
 final_authority:
@@ -17,6 +17,7 @@ review:
 priority: P0
 issue: ""
 branch: "feature/A/T-Q1-003"
+branch_owner_actor: ACTOR-2
 prompt:
   prompt_id: P-MODEL-002
   version: v1.0.0

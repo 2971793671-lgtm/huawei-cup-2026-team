@@ -3,7 +3,7 @@ task_id: T-Q1-008
 title: "问题一论文段落与主张登记"
 status: DRAFT # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
 owner: C
-reviewer: A
+reviewer: B
 owner_actor: ACTOR-3
 reviewer_actor: ACTOR-2
 final_authority:
@@ -17,6 +17,7 @@ review:
 priority: P0
 issue: ""
 branch: "paper/C/T-Q1-008"
+branch_owner_actor: ACTOR-3
 prompt:
   prompt_id: P-PAPER-001
   version: v1.0.0

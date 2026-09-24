@@ -2,8 +2,8 @@
 task_id: T-Q1-005
 title: "问题一指标冲突、权重敏感性与解释"
 status: DRAFT # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
-owner: A
-reviewer: C
+owner: C
+reviewer: B
 owner_actor: ACTOR-3
 reviewer_actor: ACTOR-2
 final_authority:
@@ -17,6 +17,7 @@ review:
 priority: P0
 issue: ""
 branch: "feature/A/T-Q1-005"
+branch_owner_actor: ACTOR-3
 prompt:
   prompt_id: P-CONFLICT-001
   version: v1.0.0
@@ -44,4 +45,4 @@ acceptance_criteria:
 definition_of_done:
   - "ACTOR-2 复核解释是否可视化且没有超出数据证据"
   - "ACTOR-1 以 A 身份确认技术结论与未决问题"
-notes: "本任务不能在 T-Q1-004 没有可接受 run_id 时开始正式解释。"
+notes: "本任务不能在 T-Q1-004 没有 ACCEPTED run_id 时开始正式解释；T-Q1-004 必须先通过 ACTOR-3 独立复核并由 ACTOR-1 以 A 身份签署。"

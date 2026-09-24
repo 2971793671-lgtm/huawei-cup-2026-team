@@ -17,6 +17,7 @@ review:
 priority: P0
 issue: ""
 branch: "feature/B/T-Q1-004"
+branch_owner_actor: ACTOR-2
 prompt:
   prompt_id: P-EXP-002
   version: v1.0.0

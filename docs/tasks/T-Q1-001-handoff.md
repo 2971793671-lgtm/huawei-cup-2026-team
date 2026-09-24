@@ -3,10 +3,19 @@
 ```text
 [HANDOFF]
 task_id: T-Q1-001
-owner: B
-reviewer: A
+owner_role: B
+owner_actor: ACTOR-1
+reviewer_role: C
+reviewer_actor: ACTOR-2
+final_authority_role: A
+final_authority_actor: ACTOR-1
+independence_check: PASS
+reviewer_decision: PENDING
+review_feedback_id: NONE
+final_decision: PENDING
 device_id: DEVICE-LOCAL-CODEX
 branch: feature/B/T-Q1-001
+branch_owner_actor: ACTOR-1
 prompt_id: P-EXP-001@v1.0.0
 prompt_run_id: PR-20260923-002
 run_id: q1-raw-contract-20260923-r01

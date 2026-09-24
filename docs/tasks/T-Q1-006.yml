@@ -17,6 +17,7 @@ review:
 priority: P1
 issue: ""
 branch: "feature/C/T-Q1-006"
+branch_owner_actor: ACTOR-3
 prompt:
   prompt_id: P-VALID-001
   version: v1.0.0

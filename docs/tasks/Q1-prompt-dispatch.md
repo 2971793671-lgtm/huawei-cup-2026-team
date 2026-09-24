@@ -142,8 +142,13 @@ T-Q1-008：在 T-Q1-006/T-Q1-007 ACCEPTED 后，阅读 docs/tasks/T-Q1-008.yml �
 task_id:
 prompt_id@version:
 prompt_run_id:
-owner:
-reviewer:
+owner_role:
+owner_actor:
+reviewer_role:
+reviewer_actor:
+final_authority_role:
+final_authority_actor:
+independence_check: PASS | FAIL | REVIEW_BLOCKED
 branch:
 commit:
 run_id:
@@ -152,7 +157,9 @@ command:
 outputs_and_hashes:
 status: REVIEW | ACCEPTED | REWORK | BLOCKED
 acceptance_result: PASS | PASS_WITH_WARNINGS | FAIL
-feedback_id:
+reviewer_decision: PENDING | PASS | PASS_WITH_WARNINGS | FAIL
+review_feedback_id:
+final_decision: PENDING | ACCEPTED | REWORK | BLOCKED
 limitations:
 review_request:
 next_action:

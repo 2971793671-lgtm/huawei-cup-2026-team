@@ -75,6 +75,8 @@ command:
 output_hashes:
 status: REVIEW | ACCEPTED | REWORK | REVIEW_BLOCKED
 feedback_id:
+reviewer_decision: PENDING | PASS | PASS_WITH_WARNINGS | FAIL
+final_decision: PENDING | ACCEPTED | REWORK | BLOCKED
 limitations:
 next_action:
 ```
