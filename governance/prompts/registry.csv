@@ -1,6 +1,10 @@
 prompt_id,title,domain,version,status,owner,reviewer,template_path,linked_tasks,notes
 P-MODEL-001,模型规格与算法拆解,model,v1.0.0,draft,A,B,governance/prompts/catalog/P-MODEL-001.md,,
+P-MODEL-002,问题一综合评价模型规格与评价协议,model,v1.0.0,draft,A,B,governance/prompts/catalog/P-MODEL-002.md,T-Q1-003,
 P-DATA-001,问题一质量数据预处理与泄漏审计,data,v1.0.0,draft,B,A,governance/prompts/catalog/P-DATA-001.md,T-Q1-002,
 P-EXP-001,可复现实验实现与记录,experiment,v1.0.0,draft,B,A,governance/prompts/catalog/P-EXP-001.md,T-Q1-001,
+P-EXP-002,问题一基线、PP-GA 与对照模型实现,experiment,v1.0.0,draft,B,A,governance/prompts/catalog/P-EXP-002.md,T-Q1-004,
+P-CONFLICT-001,问题一冲突诊断与解释,analysis,v1.0.0,draft,A,C,governance/prompts/catalog/P-CONFLICT-001.md,T-Q1-005,
+P-VALID-001,问题一验证与稳健性分析,validation,v1.0.0,draft,C,A,governance/prompts/catalog/P-VALID-001.md,T-Q1-006,
 P-PAPER-001,结果分析与LaTeX段落,paper,v1.0.0,draft,C,A,governance/prompts/catalog/P-PAPER-001.md,,
 P-FIG-001,论文图表生成与审查,figure,v1.0.0,draft,C,B,governance/prompts/catalog/P-FIG-001.md,,

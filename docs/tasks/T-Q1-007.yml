@@ -1,0 +1,32 @@
+# 问题一图表与结果表
+task_id: T-Q1-007
+title: "问题一图表与结果表"
+status: DRAFT # DRAFT | READY | RUNNING | REVIEW | ACCEPTED | REWORK | BLOCKED
+owner: C
+reviewer: B
+priority: P1
+issue: ""
+branch: "feature/C/T-Q1-007"
+prompt:
+  prompt_id: P-FIG-001
+  version: v1.0.0
+  prompt_run_id: ""
+objective: "从已接受 run_id 生成可复现的质量分布、方法比较、冲突诊断、稳健性和域迁移图表。"
+inputs:
+  - ref: docs/tasks/T-Q1-005.yml
+    purpose: "冲突诊断结果"
+  - ref: docs/tasks/T-Q1-006.yml
+    purpose: "验证和稳健性结果"
+expected_outputs:
+  - path: paper/figures/
+    description: "图表源文件和导出文件"
+  - path: paper/tables/
+    description: "结果表源文件"
+  - path: docs/decisions/q1-figure-audit.md
+    description: "样本量、分层、单位、图例和证据边界审查"
+acceptance_criteria:
+  - "每张图回链输入 run_id、数据 manifest、脚本和命令"
+  - "区分训练/内部留出/重叠外部/新增外部，图例不掩盖不确定性"
+  - "不使用截图替代源文件，不删去不利结果"
+definition_of_done:
+  - "B 复核数字和路径，C 复核图表和图注"
