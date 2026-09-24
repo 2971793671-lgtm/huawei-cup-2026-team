@@ -12,8 +12,8 @@
     },
     {
       "path": "README-delivery.md",
-      "bytes": 3498,
-      "sha256": "c3f05e979c8e168a5b51440298ef914ddb42b3dfd20c5af9e9eb99b565e23fb3"
+      "bytes": 3756,
+      "sha256": "e99258c6c8ec3c71712467511151ba92975b47ca2ae232863dcad57cdcbc3aec"
     },
     {
       "path": "README.md",
@@ -72,28 +72,28 @@
     },
     {
       "path": "docs/tasks/T-Q1-002-handoff.md",
-      "bytes": 1268,
-      "sha256": "2b1aaadaf8bdc9e27d4ef6c241a7f53c13bb9cb0acdf747359509a7480b4f0eb"
+      "bytes": 1345,
+      "sha256": "4f5de2867f1f50ab1ac11a4fcdbadce084aff4c2563ca25220b93e12f063f9ab"
     },
     {
       "path": "docs/tasks/T-Q1-002.yml",
-      "bytes": 4270,
-      "sha256": "6c5add93082859f60f075cf5ff169ce88302c58b5dc443f2cf0b2cce4af953a3"
+      "bytes": 4349,
+      "sha256": "3489e17caf25346bf4a3551c4fcba99d86f7d0f801516ed1701293ca3efc017f"
     },
     {
       "path": "docs/tasks/T-Q1-004-handoff.md",
-      "bytes": 1258,
-      "sha256": "085c91982c6c3af0870b9a01c295a9ea1e5d07592a1b0de36c0dc0d5ddfad934"
+      "bytes": 1335,
+      "sha256": "e96f8a1f1cc67325778cd391d5aef08a408bf68b7421fc5630c9d4acd27e21cd"
     },
     {
       "path": "docs/tasks/T-Q1-004.yml",
-      "bytes": 2160,
-      "sha256": "51274bb7055517242b37a7da53a06da70485e77f6be41fceb1d08751efcf71db"
+      "bytes": 2370,
+      "sha256": "cdcf2a6d8b8c6f7a26bd43294a744386e844c04781f137e1beefc2c92687485e"
     },
     {
       "path": "experiments/index.csv",
-      "bytes": 2919,
-      "sha256": "7d38db883d459580126300d243b8689b878027c9eb03a6f882e9e69ceb867ba0"
+      "bytes": 3353,
+      "sha256": "651ea2b5db54657d5cfbbfa8c00cb1b55118d05141089c86129b17ac4a9d2d38"
     },
     {
       "path": "experiments/runs/q1-critic-sum-20260924-r02/README.md",
@@ -617,8 +617,8 @@
     },
     {
       "path": "governance/prompts/runs/PR-20260924-B-TOPSIS-001.yml",
-      "bytes": 1262,
-      "sha256": "d374c61b993fb15f6312dd68c3c516cc9fd2348799850a0716cca04e8b627c2c"
+      "bytes": 1402,
+      "sha256": "7836da780e141a231f8217bee09211760ccc7f3e82505fd9b83d51b39e5b9898"
     },
     {
       "path": "indicator_catalog.yaml",
@@ -690,5 +690,7 @@
       "bytes": 1558,
       "sha256": "61858ec9055b89e77ef4817400f8166b6d774bad2157921f2b78ce8fa93b28e6"
     }
-  ]
+  ],
+  "submission_pr": "https://github.com/2971793671-lgtm/huawei-cup-2026-team/pull/1",
+  "initial_submission_commit": "3e42c853460b7cbce3a0d7ae8648fd90521e657e"
 }

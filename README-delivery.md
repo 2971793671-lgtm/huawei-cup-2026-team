@@ -43,3 +43,5 @@ Git 提交候选包只含报告、代码、配置、聚合表、图、来源与�
 002 的旧哈希问题通过新运行重建建立了完整新来源链，历史成因仍作为反馈保留。004 主模型接口与公式等待 A 审核。第二小问的指标冲突消解未由本包完成。
 
 提交与原始交付包的文档差异：delivery_file_manifest.json 保留原压缩交付包的文件哈希；PR 回链、README 导航及任务分支元数据在上传时补充，当前提交清单另见 submission_manifest.json。计算代码、配置、数据清单、评分汇总不变。
+
+GitHub 审核入口：[B 的 CRITIC–TOPSIS 交付 PR](https://github.com/2971793671-lgtm/huawei-cup-2026-team/pull/1)。交付代码提交：3e42c853460b7cbce3a0d7ae8648fd90521e657e。实验的来源 commit 仍保留当时实际使用的基础版本。

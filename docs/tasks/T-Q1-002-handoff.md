@@ -5,7 +5,7 @@ reviewer: A
 prompt_run_id: PR-20260924-B-TOPSIS-001
 run_id: q1-indicator-normalization-20260924-r02
 source_commit: 3c7d3512301df6899d293e69a856027c7a4c530b
-new_code_commit: 尚未提交；按 SHA256 固定本包代码
+new_code_commit: 3e42c853460b7cbce3a0d7ae8648fd90521e657e
 status: REVIEW（交付包）；原仓库 ACCEPTED 状态未更改
 needs_human_review: true
 acceptance_result: PASS_WITH_WARNINGS（数值复核，非 Reviewer 签字）
@@ -18,3 +18,5 @@ acceptance_result: PASS_WITH_WARNINGS（数值复核，非 Reviewer 签字）
 下一步：A 审阅本包及 003 规格接口；在队伍流程确认后合并。此次以任务分支提交，等待 A 审阅后合并。
 
 submission_branch: feature/B/T-Q1-004-critic-topsis
+
+submission_pr: https://github.com/2971793671-lgtm/huawei-cup-2026-team/pull/1

@@ -46,4 +46,7 @@ local_delivery:
   spec_review: T-Q1-003 remains unaccepted; user authorized local execution and delivery;
     no team approval fabricated
   model_spec: docs/decisions/q1-critic-topsis-model-spec.md
+  submission_commit: 3e42c853460b7cbce3a0d7ae8648fd90521e657e
 submission_branch: feature/B/T-Q1-004-critic-topsis
+submission_pr: https://github.com/2971793671-lgtm/huawei-cup-2026-team/pull/1
+pr: https://github.com/2971793671-lgtm/huawei-cup-2026-team/pull/1

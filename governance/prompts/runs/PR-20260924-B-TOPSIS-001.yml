@@ -31,3 +31,5 @@ run_ids:
 - q1-topsis-wsquared-20260924-r01
 limitations: User-authorized local delivery; A review not completed. Historical manifest
   mismatch retained; no old approval or prompt registration fabricated.
+submission_pr: https://github.com/2971793671-lgtm/huawei-cup-2026-team/pull/1
+submission_commit: 3e42c853460b7cbce3a0d7ae8648fd90521e657e

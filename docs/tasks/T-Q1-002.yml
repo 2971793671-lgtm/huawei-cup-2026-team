@@ -62,3 +62,4 @@ run_id: q1-indicator-normalization-20260924-r02
 notes: 新运行重建矩阵和来源链，保留旧运行与哈希差异反馈；16 指标方向为本实验代理约定，跨领域适用性需审核。
 previous_run_id: q1-indicator-normalization-20260923-r01
 submission_branch: feature/B/T-Q1-004-critic-topsis
+submission_pr: https://github.com/2971793671-lgtm/huawei-cup-2026-team/pull/1
