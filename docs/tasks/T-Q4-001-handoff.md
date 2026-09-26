@@ -9,6 +9,7 @@ branch: feature/B/T-Q4-001-frontier-experiments
 prompt_id: P-EXP-001@v1.0.0
 prompt_run_id: PR-20260926-001
 run_id: q4-frontier-20260926-r01
+pr: https://github.com/2971793671-lgtm/huawei-cup-2026-team/pull/3
 input_refs: data/manifests/q4_attachment_c.yaml; experiments/runs/q4-frontier-20260926-r01/q3_baseline_ND_optima.csv
 commit: 见运行目录 git_commit.txt
 changed_files: scripts/q4/; docs/research/q4/; data/manifests/q4_attachment_c.yaml; experiments/runs/q4-frontier-20260926-r01/; docs/tasks/T-Q4-001.yml
